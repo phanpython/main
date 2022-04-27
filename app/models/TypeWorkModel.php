@@ -20,6 +20,12 @@ class TypeWorkModel
             header($location);
             die();
         }
+        if(isset($_POST['add-protections'])) {
+            
+            $location = 'Location: ' . HTTP . '://' . '/' . NAME_WEBSITE . '/permission/add';
+            header($location);
+            die();
+        }
     }
 
     public function getArrForTwig():array {

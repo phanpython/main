@@ -3391,3 +3391,77 @@ LINE 1: SELECT * FROM get_standart_types_works
 LINE 1: SELECT * FROM get_standart_types_works
                       ^; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 17 
  ===================== 
+[2022-04-27 21:59:28] Сообщение: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "constraint_protection"
+DETAIL:  Ключ "(protectionid)=(2)" уже существует.
+CONTEXT:  SQL-функция "set_masking_protections_entrance_vtor", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 70 
+ ===================== 
+[2022-04-27 22:15:27] Сообщение: syntax error, unexpected variable "$kSearch"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 47 
+ ===================== 
+[2022-04-27 22:42:07] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 113 
+ ===================== 
+[2022-04-27 22:42:47] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 111 
+ ===================== 
+[2022-04-27 22:42:56] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 113 
+ ===================== 
+[2022-04-27 22:51:14] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 132 
+ ===================== 
+[2022-04-27 22:52:42] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsNps(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 118 
+ ===================== 
+[2022-04-27 22:54:24] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsNps(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 117 
+ ===================== 
+[2022-04-27 23:06:29] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_protections_nps" не существует
+LINE 1: SELECT * FROM get_protections_nps
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:07:52] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:12:24] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:12:29] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:14:44] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:15:15] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:15:52] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:18:24] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:20:27] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:25:30] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:25:37] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:25:40] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:28:46] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:28:54] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:29:23] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:30:38] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:32:19] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:32:19] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 83 
+ ===================== 
+[2022-04-27 23:32:46] Сообщение: SQLSTATE[08P01]: <<Unknown error>>: 7 ОШИБКА:  в сообщении Bind передано неверное число параметров (0, а подготовленный оператор "pdo_stmt_00000001" требует 1); Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 82 
+ ===================== 
+[2022-04-27 23:41:43] Сообщение: Object of class PDOStatement could not be converted to string; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 84 
+ ===================== 
+[2022-04-27 23:41:55] Сообщение: Undefined constant "widgets\protection\id"; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 84 
+ ===================== 
+[2022-04-27 23:42:09] Сообщение: Undefined constant "widgets\protection\id"; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 84 
+ ===================== 
+[2022-04-27 23:42:15] Сообщение: Cannot use object of type PDOStatement as array; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 84 
+ ===================== 
+[2022-04-27 23:43:03] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 120 
+ ===================== 
+[2022-04-27 23:43:13] Сообщение: Undefined constant "models\id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 120 
+ ===================== 
+[2022-04-27 23:43:20] Сообщение: Undefined array key "id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 120 
+ ===================== 
+[2022-04-27 23:43:47] Сообщение: Undefined array key "protection_name"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 120 
+ ===================== 

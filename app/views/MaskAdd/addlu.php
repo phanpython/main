@@ -11,7 +11,7 @@
 		<div class="wrap">
 			<header class="header">
     <div class="header__body _container">
-        <img class="header__logo" src="img/logo.png" alt="">
+        <img class="header__logo" src="/public/img/logo.png" alt="">
         <div class="header__icons">
             <div class="header__icon">
                 <a href="permission.html" class="header__link">

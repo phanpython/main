@@ -11,7 +11,7 @@
 		<div class="wrap">
 			<header class="header">
     <div class="header__body _container">
-        <img class="header__logo" src="img/logo.png" alt="">
+        <img class="header__logo" src="/public/img/logo.png" alt="">
         <div class="header__icons">
             <div class="header__icon">
                 <a href="permission.html" class="header__link">
@@ -42,20 +42,20 @@
 						</div>
 						<div class="system-block">
 							<div class="system-block__header">МПСА:</div>
-							<div class="system-block__element"><a href="nps_usa.html">НПС "Уса"</a></div>
-							<div class="system-block__element"><a href="nps_sina.html">НПС "Сыня"</a></div>
-							<div class="system-block__element"><a href="nps_peshera.html">НПС "Печора"</a></div>
-							<div class="system-block__element"><a href="nps_schikhino.html">НПС "Чикшино"</a></div>
-							<div class="system-block__element"><a href="nps_zelenoborsk.html">НПС "Зеленоборск"</a></div>
-							<div class="system-block__element"><a href="nps_taeznoe.html">НПС "Таёжное"</a></div>
-							<div class="system-block__element"><a href="nps_ukhta-1.html">НПС "Ухта-1"</a></div>
-							<div class="system-block__element"><a href="nps_sindor.html">НПС "Синдор"</a></div>
-							<div class="system-block__element"><a href="nps_mikun.html">НПС "Микунь"</a></div>
-							<div class="system-block__element"><a href="nps_urdoma.html">НПС "Урдома"</a></div>
-							<div class="system-block__element"><a href="nps_privodino.html">НПС "Приводино"</a></div>
-							<div class="system-block__element"><a href="nps_nuksenica.html">НПС "Нюксеница"</a></div>
-							<div class="system-block__element"><a href="nps_pogorelovo.html">НПС "Погорелово"</a></div>
-							<div class="system-block__element"><a href="nps_grazovec.html">НПС "Грязовец"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Уса">НПС "Уса"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Сыня'">НПС "Сыня"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Печёра'">НПС "Печора"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Чикшино'">НПС "Чикшино"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Зеленоборск'">НПС "Зеленоборск"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Таёжное'">НПС "Таёжное"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Ухта-1'">НПС "Ухта-1"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Синдор'">НПС "Синдор"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Микунь'">НПС "Микунь"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Урдома'">НПС "Урдома"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Приводино'">НПС "Приводино"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Нюксеница'">НПС "Нюксеница"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Погорелово'">НПС "Погорелово"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Грязовец'">НПС "Грязовец"</a></div>
 
 						</div>
 						<div class="system-block">

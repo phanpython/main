@@ -40,6 +40,7 @@ class MaskAddModel
 
         if(isset($_GET['id'])){
             if ($_GET['id'] == 1) {
+                $k = 1;
                 if(isset($_POST['search_info'])) {
                     $message = 'Совпадений не найдено';
                     $search = '%' . trim($_POST['search_info']) . '%';
@@ -96,20 +97,36 @@ class MaskAddModel
                         'message' => $message,
                         'title'=> 'ТУ3'
                     ];
-                } else {
-        
-                }
+                } 
             
             }
-
-
         }
-
-
-
-
-
-
     }
+
+    public function getAddnpsVarsToTwig():array {
+
+        if(isset($_GET['id'])){
+            $npsname = $_GET['id'];
+            if(isset($_POST['search_info'])) {
+                $message = 'Совпадений не найдено';
+                $search = '%' . trim($_POST['search_info']) . '%';
+                $protection =$this->protection->getProtectionsNpsSearch($npsname, $search);
+    
+            } else {
+                $message = 'Список защит пуст';
+                $protection = $this->protection->getProtectionsNps($npsname);
+            }
+            if(isset($_COOKIE['user'])) {
+                return ['protections' => $protection,
+                    'message' => $message,
+                    'title'=> $npsname
+                ];
+            } 
+                
+        }
+    }
+    
+
+
 
 }

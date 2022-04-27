@@ -11,7 +11,7 @@
 		<div class="wrap">
 			<header class="header">
     <div class="header__body _container">
-        <img class="header__logo" src="img/logo.png" alt="">
+        <img class="header__logo" src="/public/img/logo.png" alt="">
         <div class="header__icons">
             <div class="header__icon">
                 <a href="permission.html" class="header__link">
@@ -36,7 +36,7 @@
 						<div class="content-mask__search">
 							<!-- <div class="input button button-content ">Фильтры</div> -->
 							<form method="post" class="content-search">
-								<input type="text" name="search_info" class="input input-search" placeholder="Поиск по названию защиты...">
+								<input type="text" name="search_info" class="input-mask" placeholder="Поиск по названию защиты...">
 								<span class="icon-search"></span>
 								<input type="submit" hidden name="search__permission" class="permission-search">
 							</form>
@@ -85,7 +85,7 @@
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" required="required" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">

@@ -25,8 +25,21 @@ class MaskAddController extends AppController
         $this->setAddtuVarsToTwig();
     }
 
+    public function addnpsAction() {
+        $this->checkAuthorization();
+        $this->setMeta('Добавление защит');
+        $this->model = new MaskAddModel();
+
+        $this->setAddnpsVarsToTwig();
+    }
+
     public function setAddtuVarsToTwig() {
         $arr = $this->model->getAddtuVarsToTwig();
+        Twig::addVarsToArrayOfRender($arr);
+    }
+
+    public function setAddnpsVarsToTwig() {
+        $arr = $this->model->getAddnpsVarsToTwig();
         Twig::addVarsToArrayOfRender($arr);
     }
 

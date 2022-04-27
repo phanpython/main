@@ -76,4 +76,22 @@ class Protection
         $stmt->execute(array('protection' => $protection, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
     }
 
+
+    public function getProtectionsNps($npsname):array {
+        $query = "SELECT * FROM get_protections_nps(:npsname)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('npsname' => $npsname));
+        return $stmt->fetchAll();
+    }
+
+    public function getProtectionsNpsSearch($npsname, $search):array {
+        $query = "SELECT * FROM get_protections_nps_search(:npsname, :search)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('npsname' => $npsname, 'search' => $search));
+
+        return $stmt->fetchAll();
+    }
+
+
+
 }
