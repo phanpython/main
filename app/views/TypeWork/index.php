@@ -49,7 +49,7 @@
             </div>
             <div action="http://trans/typework" method="post" class="content__types-work">
                 <div class="content__typical-work typical-work">
-                    {% for type_work in types_works %}
+                    {% for work in works %}
                     <div class="typical-work__item">
                         {% set fl = false %}
                         {% for current_type_work in current_types_works %}
@@ -59,7 +59,7 @@
                         {% endfor %}
                         <label for="type_work_{{type_work.type_workid}}" class="typical-work__main">
                             <div class="typical-work__name">
-                                {{type_work.name}}
+                                {{work.name}}
                             </div>
                             {% if fl == true %}
                             <input id="type_work_{{type_work.type_workid}}" checked="checked" class="typical-work__checkbox" type="checkbox">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="type-work-button">
-                <input type="submit" class="input button button-send-types-work" value="Сохранить">
+                <input type="submit" name="add-protections" class="input button button-send-types-work" value="Сохранить">
             </div>
             </form>
         </div>

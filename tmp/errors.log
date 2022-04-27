@@ -2809,3 +2809,585 @@ QUERY:  SELECT protection.id as id,
 	 	WHERE system_apcs.name = 'ЦСПА' and (lower(protection_name) like lower(search_info) )
 CONTEXT:  функция PL/pgSQL get_protection_cspa_search(character), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 26 
  ===================== 
+[2022-04-26 20:11:53] Сообщение: Unexpected character "$".; Файл: C:\OpenServer\domains\trans\app\views\MaskAdd\addtu.php; Линия: 13 
+ ===================== 
+[2022-04-26 20:12:08] Сообщение: Unexpected character "$".; Файл: C:\OpenServer\domains\trans\app\views\MaskAdd\addtu.php; Линия: 12 
+ ===================== 
+[2022-04-26 20:13:44] Сообщение: Undefined array key "id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 15 
+ ===================== 
+[2022-04-26 20:13:51] Сообщение: Undefined array key "id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 15 
+ ===================== 
+[2022-04-26 20:14:30] Сообщение: Undefined array key "id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 15 
+ ===================== 
+[2022-04-26 20:14:32] Сообщение: Undefined array key "id"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 15 
+ ===================== 
+[2022-04-26 20:25:57] Сообщение: models\MaskAddModel::getAddtuVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 56 
+ ===================== 
+[2022-04-26 21:07:17] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_permissions_by_user_id(unknown) не существует
+LINE 1: SELECT * FROM get_permissions_by_user_id($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:08:39] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:11:30] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:13:03] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:13:57] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:17:51] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:20:07] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:20:11] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:20:22] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип character varying(100) не соответствует ожидаемому типу integer в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-26 21:25:01] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_user_by_id(unknown) не существует
+LINE 1: SELECT * FROM get_user_by_id($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 48 
+ ===================== 
+[2022-04-26 21:25:40] Сообщение: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "addition" отношения "permission" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (105, 2022-04-26, 1, 8, null, null, 0).
+CONTEXT:  SQL-функция "set_permission", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 93 
+ ===================== 
+[2022-04-26 21:34:29] Сообщение: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "addition" отношения "permission" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (106, 2022-04-26, 1, 8, null, null, 0).
+CONTEXT:  SQL-функция "set_permission", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 93 
+ ===================== 
+[2022-04-26 21:44:12] Сообщение: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "addition" отношения "permission" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (108, 2022-04-26, 1, 8, null, null, 0).
+CONTEXT:  SQL-функция "set_permission", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 93 
+ ===================== 
+[2022-04-26 21:48:26] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsCSPA(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 42 
+ ===================== 
+[2022-04-26 22:10:20] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsCSPA(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 42 
+ ===================== 
+[2022-04-26 22:54:04] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsCSPA(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 42 
+ ===================== 
+[2022-04-26 23:30:04] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsCSPASearch(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 38 
+ ===================== 
+[2022-04-26 23:31:28] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (2) не соответствует ожидаемому числу (4).
+CONTEXT:  SQL-оператор: "SELECT protection.id,
+    protection.name AS protection_name
+   FROM protection
+     JOIN area ON area.id = protection.areaid
+  WHERE area.name::text = 'ТУ1'::text and (lower(protection.name) like lower(search_info))"
+функция PL/pgSQL get_protections_tu1_search(character varying), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 25 
+ ===================== 
+[2022-04-26 23:32:23] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_protections_tu1_search(unknown) не существует
+LINE 1: SELECT * FROM get_protections_tu1_search($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 25 
+ ===================== 
+[2022-04-26 23:37:38] Сообщение: models\MaskAddModel::getAddtuVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 80 
+ ===================== 
+[2022-04-26 23:38:11] Сообщение: Контроллер controllers\NpsController не найден; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 37 
+ ===================== 
+[2022-04-26 23:38:14] Сообщение: models\MaskAddModel::getAddtuVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 80 
+ ===================== 
+[2022-04-26 23:38:51] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsTu2(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 61 
+ ===================== 
+[2022-04-26 23:53:53] Сообщение: Call to undefined method widgets\protection\Protection::addProtection(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 17 
+ ===================== 
+[2022-04-27 00:24:35] Сообщение: Call to undefined method widgets\protection\Protection::getProtectionsTu2(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 62 
+ ===================== 
+[2022-04-27 00:24:37] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 1: select type_work.id, type_work.name from type_work
+                                                 ^
+QUERY:  select type_work.id, type_work.name from type_work
+join permission__type_work on permission__type_work.type_workid = type_work.id
+where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id)
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:33:29] Сообщение: Call to undefined method widgets\protection\Protection::addProtection(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 17 
+ ===================== 
+[2022-04-27 00:35:32] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 1: select type_work.id, type_work.name from type_work
+                                                 ^
+QUERY:  select type_work.id, type_work.name from type_work
+join permission__type_work on permission__type_work.type_workid = type_work.id
+where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id)
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:35:55] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_permissions_by_user_id(unknown) не существует
+LINE 1: SELECT * FROM get_permissions_by_user_id($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:36:38] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип integer не соответствует ожидаемому типу character varying в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:38:57] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип integer не соответствует ожидаемому типу character varying в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:39:01] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип integer не соответствует ожидаемому типу character varying в столбце 3.
+CONTEXT:  SQL-оператор: "SELECT permission.id as id,
+    permission.date_create as date_create,
+    permission.number as number,
+    status.name AS status_name,
+    subdivision.name AS subdivision_name,
+    permission.description as description,
+    permission.addition as addition
+   FROM permission
+     JOIN status ON status.id = permission.statusid
+     JOIN subdivision ON subdivision.id = permission.subdivisionid
+     join user_permission on user_permission.permissionid = permission.id
+	join "user" on "user".id = user_permission.userid
+	join "type_person" on "type_person".id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id"
+функция PL/pgSQL get_permissions_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:40:06] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 3:    FROM type_work
+                ^
+QUERY:  select permission.id AS permissionid,
+	type_work.name
+   FROM type_work
+     JOIN permission__type_work ON permission__type_work.type_workid = type_work.id
+     JOIN permission ON permission.id = permission__type_work.permissionid
+	  JOIN user_permission ON user_permission.permissionid = permission.id
+	  JOIN "user" ON "user".id = user_permission.userid
+	  join type_person on type_person.id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id
+CONTEXT:  функция PL/pgSQL get_types_works_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 55 
+ ===================== 
+[2022-04-27 00:43:21] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 3:    FROM type_work
+                ^
+QUERY:  select permission.id AS permissionid,
+	type_work.name
+   FROM type_work
+     JOIN permission__type_work ON permission__type_work.type_workid = type_work.id
+     JOIN permission ON permission.id = permission__type_work.permissionid
+	  JOIN user_permission ON user_permission.permissionid = permission.id
+	  JOIN "user" ON "user".id = user_permission.userid
+	  join type_person on type_person.id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id
+CONTEXT:  функция PL/pgSQL get_types_works_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 55 
+ ===================== 
+[2022-04-27 00:44:12] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 1: select type_work.id, type_work.name from type_work
+                                                 ^
+QUERY:  select type_work.id, type_work.name from type_work
+join permission__type_work on permission__type_work.type_workid = type_work.id
+where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id)
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-27 00:56:46] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "standart" не существует
+LINE 6:   join standart on standart.type_workid = type_work.id)
+               ^
+QUERY:  select type_work.id, type_work.name from type_work
+join permission__type_work on permission__type_work.type_workid = type_work.id
+where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id)
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-27 01:01:46] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "nonstandart" не существует
+LINE 3:  join nonstandart on nonstandart.type_workid = type_work.id
+              ^
+QUERY:  SELECT type_work.name from permission__type_work
+	join type_work on type_work.id = permission__type_work.type_workid
+	join nonstandart on nonstandart.type_workid = type_work.id
+   WHERE permission__type_work.permissionid = var_permission_id
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-27 01:04:37] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "permission__type_work" отсутствует в предложении FROM
+LINE 3:    WHERE permission__type_work.permissionid = var_permission...
+                 ^
+QUERY:  SELECT work.name from public.work
+	join type_work on type_work.id = public.work.type_workid
+   WHERE permission__type_work.permissionid = var_permission_id and type_work.name = 'Нестандартная'
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-27 01:29:00] Сообщение: syntax error, unexpected token "}", expecting "," or ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 18 
+ ===================== 
+[2022-04-27 01:33:38] Сообщение: Undefined constant "models\i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 20 
+ ===================== 
+[2022-04-27 01:35:17] Сообщение: Undefined constant "models\i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 20 
+ ===================== 
+[2022-04-27 01:36:28] Сообщение: syntax error, unexpected identifier "i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 20 
+ ===================== 
+[2022-04-27 01:37:00] Сообщение: syntax error, unexpected token "var"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 16 
+ ===================== 
+[2022-04-27 01:38:08] Сообщение: syntax error, unexpected variable "$_POST", expecting "("; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 23 
+ ===================== 
+[2022-04-27 01:39:30] Сообщение: Maximum execution time of 60 seconds exceeded; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 23 
+ ===================== 
+[2022-04-27 01:47:23] Сообщение: Undefined array key "add-system-1"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 23 
+ ===================== 
+[2022-04-27 01:48:39] Сообщение: syntax error, unexpected token "var"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 16 
+ ===================== 
+[2022-04-27 01:48:54] Сообщение: Undefined constant "models\i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:50:02] Сообщение: Undefined array key "add-system-$i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:50:20] Сообщение: Unsupported operand types: string + int; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:51:18] Сообщение: Undefined array key "add-system- $i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:51:35] Сообщение: Undefined array key "add-system-$i"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:52:24] Сообщение: Undefined array key "add-system-1"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 01:53:03] Сообщение: Undefined array key "add-system-5"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 25 
+ ===================== 
+[2022-04-27 01:54:02] Сообщение: Undefined array key "add-system-5"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 25 
+ ===================== 
+[2022-04-27 01:54:08] Сообщение: Undefined array key "add-system-5"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 25 
+ ===================== 
+[2022-04-27 02:14:16] Сообщение: Call to undefined function models\orint_r(); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 18 
+ ===================== 
+[2022-04-27 02:19:08] Сообщение: Undefined array key "entrance_exit-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 22 
+ ===================== 
+[2022-04-27 02:19:30] Сообщение: Undefined array key "entrance_exit-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 22 
+ ===================== 
+[2022-04-27 02:20:18] Сообщение: Cannot use isset() on the result of an expression (you can use "null !== expression" instead); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 22 
+ ===================== 
+[2022-04-27 02:22:14] Сообщение: Cannot use isset() on the result of an expression (you can use "null !== expression" instead); Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 22 
+ ===================== 
+[2022-04-27 06:57:01] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 06:57:59] Сообщение: Too few arguments to function widgets\protection\Protection::setMaskingProtectionsExit(), 3 passed in C:\OpenServer\domains\trans\app\models\MaskAddModel.php on line 24 and exactly 4 expected; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 66 
+ ===================== 
+[2022-04-27 06:58:20] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 06:59:09] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 06:59:32] Сообщение: Undefined variable $date; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:43:45] Сообщение: Undefined variable $date; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:44:20] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:53:23] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:54:27] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:55:25] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:55:43] Сообщение: Undefined variable $locations; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:56:44] Сообщение: Undefined variable $locations; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:56:59] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 14:58:10] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 64 
+ ===================== 
+[2022-04-27 14:58:28] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 64 
+ ===================== 
+[2022-04-27 15:01:37] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 64 
+ ===================== 
+[2022-04-27 15:05:00] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 15:05:54] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 15:07:18] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 15:07:36] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 15:08:27] Сообщение: Undefined array key "location-2"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 27 
+ ===================== 
+[2022-04-27 15:09:44] Сообщение: Too few arguments to function widgets\protection\Protection::setMaskingProtectionsExit(), 3 passed in C:\OpenServer\domains\trans\app\models\MaskAddModel.php on line 24 and exactly 4 expected; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 67 
+ ===================== 
+[2022-04-27 15:12:57] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_exit(unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_exit($1, $2, $3)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 70 
+ ===================== 
+[2022-04-27 15:17:25] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-функция "set_masking_protections_exit", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 70 
+ ===================== 
+[2022-04-27 16:05:34] Сообщение: syntax error, unexpected token "public"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 37 
+ ===================== 
+[2022-04-27 16:40:29] Сообщение: Object of class PDOStatement could not be converted to string; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 179 
+ ===================== 
+[2022-04-27 16:40:44] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 179 
+ ===================== 
+[2022-04-27 16:49:50] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "masking_permission" отсутствует в предложении FROM
+LINE 6:    JOIN protection ON protection.id = masking_permission.pro...
+                                              ^
+QUERY:  SELECT area.name AS area_name,
+	protection.name AS protection_name,
+	entrance.name AS entrance_name,
+	vtor.name AS vtor_name
+   FROM masking_protection
+   JOIN protection ON protection.id = masking_permission.protectionid
+   JOIN area ON area.id = protection.areaid
+   JOIN entrance ON entrance.id = masking_protection.entranceid
+   JOIN vtor ON vtor.id = masking_protection.vtorid
+   JOIN permission ON permission.id = masking_protection.permissionid
+   	WHERE permission.id = var_permission_id
+CONTEXT:  функция PL/pgSQL get_protections_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 180 
+ ===================== 
+[2022-04-27 17:04:47] Сообщение: Unexpected "elseif" tag (expecting closing tag for the "for" tag defined near line 134).; Файл: C:\OpenServer\domains\trans\app\views\Permission\add.php; Линия: 156 
+ ===================== 
+[2022-04-27 18:07:10] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (6) не соответствует ожидаемому числу (5).
+CONTEXT:  SQL-оператор: "SELECT area.name AS area_name,
+	protection.name AS protection_name,
+	entrance.name AS entrance_name,
+	vtor.name AS vtor_name,
+	public.object.name AS object_name,
+	system_apcs.name AS system_apcs_name
+   FROM masking_protection
+   JOIN protection ON protection.id = masking_protection.protectionid
+   JOIN area ON area.id = protection.areaid
+   JOIN entrance ON entrance.id = masking_protection.entranceid
+   JOIN vtor ON vtor.id = masking_protection.vtorid
+   JOIN permission ON permission.id = masking_protection.permissionid
+   JOIN public.object ON public.object.id = masking_protection.objectid
+   JOIN system_apcs ON system_apcs.id = protection.system_apcsid
+   	WHERE permission.id = var_permission_id"
+функция PL/pgSQL get_protections_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 180 
+ ===================== 
+[2022-04-27 18:07:19] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (6) не соответствует ожидаемому числу (5).
+CONTEXT:  SQL-оператор: "SELECT area.name AS area_name,
+	protection.name AS protection_name,
+	entrance.name AS entrance_name,
+	vtor.name AS vtor_name,
+	public.object.name AS object_name,
+	system_apcs.name AS system_apcs_name
+   FROM masking_protection
+   JOIN protection ON protection.id = masking_protection.protectionid
+   JOIN area ON area.id = protection.areaid
+   JOIN entrance ON entrance.id = masking_protection.entranceid
+   JOIN vtor ON vtor.id = masking_protection.vtorid
+   JOIN permission ON permission.id = masking_protection.permissionid
+   JOIN public.object ON public.object.id = masking_protection.objectid
+   JOIN system_apcs ON system_apcs.id = protection.system_apcsid
+   	WHERE permission.id = var_permission_id"
+функция PL/pgSQL get_protections_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 180 
+ ===================== 
+[2022-04-27 18:14:46] Сообщение: Unexpected "endfor" tag (expecting closing tag for the "if" tag defined near line 180).; Файл: C:\OpenServer\domains\trans\app\views\Permission\add.php; Линия: 187 
+ ===================== 
+[2022-04-27 18:38:51] Сообщение: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "constraint_protection"
+DETAIL:  Ключ "(protectionid)=(1)" уже существует.
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 18:43:01] Сообщение: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "constraint_protection"
+DETAIL:  Ключ "(protectionid)=(1)" уже существует.
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 18:43:10] Сообщение: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "constraint_protection"
+DETAIL:  Ключ "(protectionid)=(1)" уже существует.
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 18:45:52] Сообщение: SQLSTATE[23505]: Unique violation: 7 ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "constraint_protection"
+DETAIL:  Ключ "(protectionid)=(1)" уже существует.
+CONTEXT:  SQL-функция "set_masking_protections_entrance", оператор 2; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-27 19:14:15] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:18:18] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:18:22] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:18:42] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:18:49] Сообщение: syntax error, unexpected token "elseif"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 26 
+ ===================== 
+[2022-04-27 19:19:14] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:19:20] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:19:27] Сообщение: syntax error, unexpected token "else"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 26 
+ ===================== 
+[2022-04-27 19:19:34] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 25 
+ ===================== 
+[2022-04-27 19:19:46] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:20:16] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:20:31] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 24 
+ ===================== 
+[2022-04-27 19:53:00] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_standart_types_works" не существует
+LINE 1: SELECT * FROM get_standart_types_works
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 17 
+ ===================== 
+[2022-04-27 20:01:58] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_standart_types_works" не существует
+LINE 1: SELECT * FROM get_standart_types_works
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 17 
+ ===================== 

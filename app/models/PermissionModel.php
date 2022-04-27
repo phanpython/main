@@ -78,6 +78,7 @@ class PermissionModel
                 'current_dates' => $this->date->getDatesByPermissionId($_SESSION['idCurrentPermission']),
                 'description' => $this->permission->getDescriptionOfPermission($_SESSION['idCurrentPermission']),
                 'addition' => $this->permission->getAdditionOfPermission($_SESSION['idCurrentPermission']),
+                'protections' => $this->permission->getProtectionsOfPermission($_SESSION['idCurrentPermission']),
                 'untypical_work' => $this->permission->getUntypicalWorkOfPermission($_SESSION['idCurrentPermission'])];
         }
     }

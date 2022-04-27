@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="/public/css/style.min.css">
-	<title>Главная</title>
+	<title>{{meta.title}}</title>
 </head>
 	<body>
 		<div class="wrap">
@@ -36,9 +36,9 @@
 						<div class="content-maskadd__system-header">Выберите систему:</div>
 						<div class="system-block">
 							<div class="system-block__header">ЦСПА:</div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu">ТУ1</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu">ТУ2</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu">ТУ3</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=1">ТУ1</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=2">ТУ2</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=3">ТУ3</a></div>
 						</div>
 						<div class="system-block">
 							<div class="system-block__header">МПСА:</div>

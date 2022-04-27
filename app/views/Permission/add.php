@@ -117,77 +117,86 @@
                     </div>
 
                     <div class="permission-add__item">
+
                         <div class="permission-add__subtitle">
                             4. Защиты:
                         </div>
                         <div class="table-content-mask__rows table-content-mask__row_head">
+                            <div class="table-content-mask__col table-content-mask__head" name="system">Система</div>
                             <div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
                             <div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
                             <div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Локация</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
                         </div>
+                        {% set i = 0 %}
+                        {% for protection in protections %}
+                        {% set i = i + 1 %}
                         <div class="table-content-mask__rows table-row">
+                            <div class="table-content-mask__col table-col col-first">
+									<input type="text" name="ty-1" class="table-mask-col__input protection input-ty input-row" value="ЦСПА" required="required" readonly>
+							</div>
                             <div class="table-content-mask__col table-col">
-                                <input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Замена масла" required="required" readonly>
+                                <input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="{{protection.protection_name}}" required="required" readonly>
                             </div>
-
+                            {% if protection.entrance_name == 'Вход' %}
                             <div class="table-content-mask__col table-col">
                                 <label class="check-entrance">
-                                    <input type="radio" class="check-entrance__input entrance-1 input-row" name="entrance_exit-1" value="extrance-1" checked>
+                                    <input type="radio" class="check-entrance__input input-row" name="entrance_exit-{{i}}" value="entrances-1" checked>
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
                             <div class="table-content-mask__col table-col">
                                 <label class="check-entrance">
-                                    <input type="radio" class="check-entrance__input exit-1 input-row" name="entrance_exit-1" value="exit-1">
+                                    <input type="radio" class="check-entrance__input input-row" name="entrance_exit-{{i}}" value="exits-1">
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
                             <div class="table-content-mask__col table-col col-first entrance-on" >
-                                <input type="text" name="location-1" class="table-col__input location input-row" value="МНА №1" required="required" >
+                                <input type="text" name="location-{{i}}" readonly class="table-col__input location input-row" value="{{protection.object_name}}" required="required" >
                             </div>
-                            <div class="table-content-mask__col table-col entrance-on">
+                            {% if protection.vtor_name == 'Втор' %}
+                            <div class="table-content-mask__col table-col entrance-on"> 
                                 <label class="check-entrance">
-                                    <input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
+                                    <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" checked>
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
-                        </div>
-                        
-                        <div class="table-content-mask__rows table-row">
-                            <div class="table-content-mask__col table-col">
-                                <input type="text" name="protection-2" class="table-mask-col__input protection input-row" value="Замена подшипников" required="required" readonly>
+                            {% elseif protection.vtor_name == 'Невтор' %}
+                            <div class="table-content-mask__col table-col entrance-on"> 
+                                <label class="check-entrance">
+                                    <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" >
+                                    <span class="check-entrance__span"></span>
+                                </label>
                             </div>
-
+                            {% endif %}
+                            {% elseif protection.entrance_name == 'Выход' %}
                             <div class="table-content-mask__col table-col">
                                 <label class="check-entrance">
-                                    <input type="radio" class="check-entrance__input entrance-2 input-row" name="entrance_exit-2" value="extrance-2" checked>
+                                    <input type="radio" class="check-entrance__input input-row" name="entrance_exit-{{i}}" value="entrances-{{i}}" >
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
                             <div class="table-content-mask__col table-col">
                                 <label class="check-entrance">
-                                    <input type="radio" class="check-entrance__input exit-2 input-row" name="entrance_exit-2" value="exit-2">
+                                    <input type="radio" class="check-entrance__input input-row" name="entrance_exit-{{i}}" value="exits-{{i}}" checked>
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
                             <div class="table-content-mask__col table-col col-first entrance-on" >
-                                <input type="text" name="location-2" class="table-col__input location input-row" value="МНА №2" required="required" >
+                                <input type="text" name="location-{{i}}" readonly class="table-col__input location input-row" value="{{protection.object_name}}" required="required" >
                             </div>
-                            <div class="table-content-mask__col table-col entrance-on">
+                            <div class="table-content-mask__col table-col entrance-on"> 
                                 <label class="check-entrance">
-                                    <input type="checkbox" class="check-entrance__input vtor" name="vtor-2">
+                                    <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" disabled>
                                     <span class="check-entrance__span"></span>
                                 </label>
                             </div>
-                            </div>
-                        </div>
+                            {% endif %}
 
-                   
+                        </div>
+                        {% endfor %}
                     </div>
-
-
 
                     <a href="http://trans/mask-add" class="permission-add__button input button sticky">Добавить защиты</a>
 

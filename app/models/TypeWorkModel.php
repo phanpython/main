@@ -23,7 +23,7 @@ class TypeWorkModel
     }
 
     public function getArrForTwig():array {
-        return ['types_works' => $this->typeWork->getTypicalWorks(),
+        return ['works' => $this->typeWork->getTypicalWorks(),
             'current_types_works' => $this->typeWork->getTypicalWorksByPermissionId($_SESSION['idCurrentPermission'])];
     }
 }

@@ -13,7 +13,7 @@ class TypeWork
     }
 
     public function getTypicalWorks() {
-        $query = "SELECT * FROM get_standart_types_works";
+        $query = "SELECT * FROM get_typical_works";
         $stmt = $this->pdo->query($query);
 
         return $stmt->fetchAll();

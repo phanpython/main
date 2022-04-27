@@ -173,4 +173,13 @@ class Permission
 
         return '';
     }
+
+    public function getProtectionsOfPermission($permissionId) {
+        $query = "SELECT * FROM get_protections_of_permission(:permission_id)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('permission_id' => $permissionId));
+        return $stmt->fetchAll();
+    }
+
+
 }

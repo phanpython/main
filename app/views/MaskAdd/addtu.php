@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="/public/css/style.min.css">
-	<title>ТУ1</title>
+	<title>{{meta.title}}</title>
 </head>
 	<body>
 		<div class="wrap">
@@ -46,9 +46,9 @@
 					{% if protections|length == 0 %}
                     	<div class="table_error_message">{{message}}</div>
                 	{% else %}
-						<form method="post" class="content-mask__table table-content-mask table-systems">
+						<form action="" method="post" class="content-mask__table table-content-mask table-systems">
                             <div class="table-content-mask__rows table-content-mask__row_header">
-								<div class="table-content-mask__col table-content-mask__head" name="tu-1">ТУ1</div>
+								<div class="table-content-mask__col table-content-mask__head" name="tu-1">{{title}}</div>
 							</div>
 							<div class="table-content-mask__rows table-content-mask__row_head">
 								<div class="table-content-mask__col table-content-mask__head" name="add-system">Выбрать защиту</div>
@@ -74,7 +74,7 @@
 								</div>
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="extrance-{{i}}">
+										<input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}">
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
@@ -85,7 +85,7 @@
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" placeholder="Введите локацию" value="" required="required" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" required="required" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">
@@ -97,7 +97,7 @@
 							{% endfor %}
 							<!---->
 							<div class="permission-addmask__block">
-								<input type="submit"  name="add-masks" class="permission-addmask__button input button" value="Добавить защиты в разрешение">
+							<input type="submit"  name="add-masks" class="permission-addmask__button input button" value="Добавить защиты в разрешение">
 							</div>
 						</form>
 					{% endif %}
