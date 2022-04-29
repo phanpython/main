@@ -43,26 +43,26 @@
 						<div class="system-block">
 							<div class="system-block__header">МПСА:</div>
 							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Уса">НПС "Уса"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Сыня'">НПС "Сыня"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Печёра'">НПС "Печора"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Чикшино'">НПС "Чикшино"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Зеленоборск'">НПС "Зеленоборск"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Таёжное'">НПС "Таёжное"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Ухта-1'">НПС "Ухта-1"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Синдор'">НПС "Синдор"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Микунь'">НПС "Микунь"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Урдома'">НПС "Урдома"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Приводино'">НПС "Приводино"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Нюксеница'">НПС "Нюксеница"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Погорелово'">НПС "Погорелово"</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id='НПС Грязовец'">НПС "Грязовец"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Сыня">НПС "Сыня"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Печёра">НПС "Печора"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Чикшино">НПС "Чикшино"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Зеленоборск">НПС "Зеленоборск"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Таёжное">НПС "Таёжное"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Ухта-1">НПС "Ухта-1"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Синдор">НПС "Синдор"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Микунь">НПС "Микунь"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Урдома">НПС "Урдома"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Приводино">НПС "Приводино"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Нюксеница">НПС "Нюксеница"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Погорелово">НПС "Погорелово"</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addnps/?id=НПС Грязовец">НПС "Грязовец"</a></div>
 
 						</div>
 						<div class="system-block">
 							<div class="system-block__header">СОУ:</div>
-							<div class="system-block__element"><a href="mask_add.html">ЛУ1</a></div>
-							<div class="system-block__element"><a href="mask_add.html">ЛУ2</a></div>
-							<div class="system-block__element"><a href="mask_add.html">ЛУ3</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ1">ЛУ1</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ2">ЛУ2</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ3">ЛУ3</a></div>
 						</div>
 						
 

@@ -36,6 +36,14 @@ class PermissionModel
             header($location);
             die();
         }
+
+        if (isset($_POST["del-masks"])){
+            for($i = 1; $i < 1000; $i++) {
+                if (isset($_POST["protection_id-$i"])){
+                    $this->permission->delMasksByPermissionId($_POST['protection_id-' . $i], $_SESSION['idCurrentPermission']);
+                }
+            }
+        }
     }
 
     public function getIndexVarsToTwig() {

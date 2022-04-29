@@ -34,7 +34,6 @@
                 <div class="content-mask__body">
 					<div class="content-mask__search-box">
 						<div class="content-mask__search">
-							<!-- <div class="input button button-content ">Фильтры</div> -->
 							<form method="post" class="content-search">
 								<input type="text" name="search_info" class="input-mask" placeholder="Поиск по названию защиты...">
 								<span class="icon-search"></span>

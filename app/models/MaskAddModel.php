@@ -87,7 +87,6 @@ class MaskAddModel
                     $message = 'Совпадений не найдено';
                     $search = '%' . trim($_POST['search_info']) . '%';
                     $protection =$this->protection->getProtectionsTu3Search($search);
-        
                 } else {
                     $message = 'Список защит пуст';
                     $protection = $this->protection->getProtectionsTu3();
@@ -120,6 +119,29 @@ class MaskAddModel
                 return ['protections' => $protection,
                     'message' => $message,
                     'title'=> $npsname
+                ];
+            } 
+                
+        }
+    }
+
+    public function getAddluVarsToTwig():array {
+
+        if(isset($_GET['id'])){
+            $luname = $_GET['id'];
+            if(isset($_POST['search_info'])) {
+                $message = 'Совпадений не найдено';
+                $search = '%' . trim($_POST['search_info']) . '%';
+                $protection =$this->protection->getProtectionsLuSearch($luname, $search);
+    
+            } else {
+                $message = 'Список защит пуст';
+                $protection = $this->protection->getProtectionsLu($luname);
+            }
+            if(isset($_COOKIE['user'])) {
+                return ['protections' => $protection,
+                    'message' => $message,
+                    'title'=> $luname
                 ];
             } 
                 

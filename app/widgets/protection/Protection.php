@@ -93,5 +93,38 @@ class Protection
     }
 
 
+    public function getProtectionsLu($luname):array {
+        $query = "SELECT * FROM get_protections_lu(:luname)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('luname' => $luname));
+        return $stmt->fetchAll();
+    }
+
+    public function getProtectionsLuSearch($luname, $search):array {
+        $query = "SELECT * FROM get_protections_lu_search(:luname, :search)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('luname' => $luname, 'search' => $search));
+
+        return $stmt->fetchAll();
+    }
+
+
+    public function setMaskingProtectionsFromTypicalWorks($work, $permissionId):array {
+        $query = "SELECT * FROM set_masking_protections_from_typical_works(:work, :permission_id)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('work' => $work, 'permission_id' => $permissionId));
+
+        return $stmt->fetchAll();
+    }
+
+    public function getMaskingProtectionsFromTypicalWorks($work, $permissionId):array {
+        $query = "SELECT * FROM get_masking_protections_from_typical_works(:work, :permission_id)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('work' => $work, 'permission_id' => $permissionId));
+
+        return $stmt->fetchAll();
+    }
+
+
 
 }

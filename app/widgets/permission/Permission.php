@@ -181,5 +181,12 @@ class Permission
         return $stmt->fetchAll();
     }
 
+    public function delMasksByPermissionId($protectionId, $permissionId) {
+        $query = "SELECT * FROM del_masks_by_permission_id(:protection_id, :permission_id)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute(array('protection_id' => $protectionId, 'permission_id' => $permissionId));
+    }
+    
+
 
 }

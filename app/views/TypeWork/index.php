@@ -33,49 +33,52 @@
     <main class="content">
         <div class="content__body _container">
             <form method="post" action="" id="form-type-work">
-            <div class="navigation-chain">
-                <div class="navigation-chain__item"><a href="http://trans/permission">Разрешения / </a></div>
-                <div class="navigation-chain__item"><a href="http://trans/permission/add">Добавление разрешения /</a></div>
-                <div class="navigation-chain__item navigation-chain__item_active">Тип работы</div>
-            </div>
-            <div class="type-work-title">
-                Нетиповые работы
-            </div>
-            <div class="permission-add__block">
-                <textarea class="permission-add__textarea textarea" id="untypical_works" name="untypical_works" cols="30" rows="10" placeholder="Введите нетиповые работы...">wdw</textarea>
-            </div>
-            <div class="type-work-title">
-                Типовые виды работ
-            </div>
-            <div action="http://trans/typework" method="post" class="content__types-work">
-                <div class="content__typical-work typical-work">
-                    {% for work in works %}
-                    <div class="typical-work__item">
-                        {% set fl = false %}
-                        {% for current_type_work in current_types_works %}
-                            {% if current_type_work.id == type_work.type_workid %}
-                                {% set fl = true %}
-                            {% endif %}
-                        {% endfor %}
-                        <label for="type_work_{{type_work.type_workid}}" class="typical-work__main">
-                            <div class="typical-work__name">
-                                {{work.name}}
-                            </div>
-                            {% if fl == true %}
-                            <input id="type_work_{{type_work.type_workid}}" checked="checked" class="typical-work__checkbox" type="checkbox">
-                            {% else %}
-                            <input id="type_work_{{type_work.type_workid}}" class="typical-work__checkbox" type="checkbox">
-                            {% endif %}
-                        </label>
-                        <textarea class="typical-work__textarea textarea" name="typical-work_{{type_work.name}}" id=""></textarea>
-                    </div>
-                    {% endfor %}
-                    <input type="text" hidden class="array_types_works" name="types_works" id="">
+                <div class="navigation-chain">
+                    <div class="navigation-chain__item"><a href="http://trans/permission">Разрешения / </a></div>
+                    <div class="navigation-chain__item"><a href="http://trans/permission/add">Добавление разрешения /</a></div>
+                    <div class="navigation-chain__item navigation-chain__item_active">Тип работы</div>
                 </div>
-            </div>
-            <div class="type-work-button">
-                <input type="submit" name="add-protections" class="input button button-send-types-work" value="Сохранить">
-            </div>
+                <div class="type-work-title">
+                    Нетиповые работы
+                </div>
+                <div class="permission-add__block">
+                    <textarea class="permission-add__textarea textarea" id="untypical_works" name="untypical_works" cols="30" rows="10" placeholder="Введите нетиповые работы...">wdw</textarea>
+                </div>
+                <div class="type-work-title">
+                    Типовые виды работ
+                </div>
+                <div action="http://trans/typework" method="post" class="content__types-work">
+                    <div class="content__typical-work typical-work">
+                        {% set i = 0 %}
+                        {% for work in works %}
+                        {% set i = i + 1 %}
+                        <div class="typical-work__item">
+                            {% set fl = false %}
+                            {% for current_type_work in current_types_works %}
+                                {% if current_type_work.id == type_work.type_workid %}
+                                    {% set fl = true %}
+                                {% endif %}
+                            {% endfor %}
+                            <label for="type_work_{{type_work.type_workid}}" class="typical-work__main">
+                                <input type="hidden" class="typical-work__name" name="work_name-{{i}}" value="{{work.name}}" >
+                                <div class="typical-work__name" >
+                                    {{work.name}}
+                                </div>
+                                {% if fl == true %}
+                                <input id="type_work_{{type_work.type_workid}}" name="typical_work-{{i}}" checked="checked" class="typical-work__checkbox" type="checkbox">
+                                {% else %}
+                                <input id="type_work_{{type_work.type_workid}}" name="typical_work-{{i}}" class="typical-work__checkbox" type="checkbox">
+                                {% endif %}
+                            </label>
+                            <textarea class="typical-work__textarea textarea" name="typical-work_{{type_work.name}}" id=""></textarea>
+                        </div>
+                        {% endfor %}
+                        <input type="text" hidden class="array_types_works" name="types_works" id="">
+                    </div>
+                </div>
+                <div class="type-work-button">
+                    <input type="submit" name="add-protections" class="input button button-send-types-work" value="Сохранить">
+                </div>
             </form>
         </div>
     </main>

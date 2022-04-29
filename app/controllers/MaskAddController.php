@@ -19,7 +19,7 @@ class MaskAddController extends AppController
 
     public function addtuAction() {
         $this->checkAuthorization();
-        $this->setMeta('Добавление защит');
+        $this->setMeta('Добавление защит на ТУ');
         $this->model = new MaskAddModel();
 
         $this->setAddtuVarsToTwig();
@@ -27,10 +27,18 @@ class MaskAddController extends AppController
 
     public function addnpsAction() {
         $this->checkAuthorization();
-        $this->setMeta('Добавление защит');
+        $this->setMeta('Добавление защит на НПС');
         $this->model = new MaskAddModel();
 
         $this->setAddnpsVarsToTwig();
+    }
+
+    public function addluAction() {
+        $this->checkAuthorization();
+        $this->setMeta('Добавление защит на ЛУ');
+        $this->model = new MaskAddModel();
+
+        $this->setAddluVarsToTwig();
     }
 
     public function setAddtuVarsToTwig() {
@@ -40,6 +48,12 @@ class MaskAddController extends AppController
 
     public function setAddnpsVarsToTwig() {
         $arr = $this->model->getAddnpsVarsToTwig();
+        Twig::addVarsToArrayOfRender($arr);
+    }
+
+    
+    public function setAddluVarsToTwig() {
+        $arr = $this->model->getAddluVarsToTwig();
         Twig::addVarsToArrayOfRender($arr);
     }
 

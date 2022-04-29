@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<title>ТУ1</title>
+	<link rel="stylesheet" href="/public/css/style.min.css">
+	<title>{{title}}</title>
 </head>
 	<body>
 		<div class="wrap">
@@ -34,18 +34,20 @@
                 <div class="content-mask__body">
 					<div class="content-mask__search-box">
 						<div class="content-mask__search">
-							<!-- <div class="input button button-content ">Фильтры</div> -->
-							<form method="post" class="filter-content-mask__search">
-								<input type="text" class="input" placeholder="Поиск по названию защиты...">
+							<form method="post" class="content-search">
+								<input type="text" name="search_info" class="input-mask" placeholder="Поиск по названию защиты...">
 								<span class="icon-search"></span>
 								<input type="submit" hidden name="search__permission" class="permission-search">
 							</form>
 						</div>
 					</div>
 					<div class="form-mask">
+					{% if protections|length == 0 %}
+                    	<div class="table_error_message">{{message}}</div>
+                	{% else %}
 						<form method="post" class="content-mask__table table-content-mask table-systems">
-                            <div class="table-content-mask__rows table-content-mask__row_header">
-								<div class="table-content-mask__col table-content-mask__head" name="tu-1">ЛУ1</div>
+                            <div class="table-content-mask__rows table-content-mask__row_head">
+								<div class="table-content-mask__col table-content-mask__head" name="tu-1">{{title}}</div>
 							</div>
 							<div class="table-content-mask__rows table-content-mask__row_head">
 								<div class="table-content-mask__col table-content-mask__head" name="add-system">Выбрать защиту</div>
@@ -56,188 +58,49 @@
 								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
 							</div>
 							<!---->
+							{% set i = 0 %}
+							{% for protection in protections %}
+							{% set i = i + 1 %}
 							<div class="table-content-mask__rows table-row">
-								<div class="table-content-mask__col table-col" >
+								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-1">
+										<input type="checkbox" class="check-entrance__input add-system" name="add-system-{{i}}">
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col">
-									<input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Защита" required="required" readonly>
+									<input type="text" name="protection-{{i}}" class="table-mask-col__input protection input-row" value="{{protection.protection_name}}" required="required" readonly>
 								</div>
-
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-1 input-row" name="entrance_exit-1" value="extrance-1">
+										<input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}">
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-1 input-row" name="entrance_exit-1" value="exit-1">
+										<input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}">
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" value="Локация" required="required" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
+										<input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}">
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 							</div>
+							{% endfor %}
 							<!---->
-							<!---->
-							<div class="table-content-mask__rows table-row">
-								<div class="table-content-mask__col table-col" >
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Защита" required="required" readonly>
-								</div>
-
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-2 input-row" name="entrance_exit-2" value="extrance-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-2 input-row" name="entrance_exit-2" value="exit-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" value="Локация" required="required" >
-								</div>
-								<div class="table-content-mask__col table-col entrance-on">
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
+							<div class="permission-addmask__block">
+								<input type="submit"  name="add-masks" class="permission-addmask__button input button" value="Добавить защиты в разрешение">
 							</div>
-							<!---->
-							<!---->
-							<div class="table-content-mask__rows table-row">
-								<div class="table-content-mask__col table-col" >
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Защита" required="required" readonly>
-								</div>
-
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-3 input-row" name="entrance_exit-3" value="extrance-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-3 input-row" name="entrance_exit-3" value="exit-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" value="Локация" required="required" >
-								</div>
-								<div class="table-content-mask__col table-col entrance-on">
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-							</div>
-							<!---->
-                            							<!---->
-							<div class="table-content-mask__rows table-row">
-								<div class="table-content-mask__col table-col" >
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Защита" required="required" readonly>
-								</div>
-
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-4 input-row" name="entrance_exit-4" value="extrance-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-4 input-row" name="entrance_exit-4" value="exit-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" value="Локация" required="required" >
-								</div>
-								<div class="table-content-mask__col table-col entrance-on">
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-							</div>
-							<!---->
-                            <!---->
-							<div class="table-content-mask__rows table-row">
-								<div class="table-content-mask__col table-col" >
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<input type="text" name="protection-1" class="table-mask-col__input protection input-row" value="Защита" required="required" readonly>
-								</div>
-
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-5 input-row" name="entrance_exit-5" value="extrance-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col">
-									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-5 input-row" name="entrance_exit-5" value="exit-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-1" class="table-col__input location input-row" value="Локация" required="required" >
-								</div>
-								<div class="table-content-mask__col table-col entrance-on">
-									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-1">
-										<span class="check-entrance__span"></span>
-									</label>
-								</div>
-							</div>
-							<!---->
-						</form>
-
+						</form>	
+					{% endif %}
 					</div>
-                    <div class="button-add">
-                        <div class="input button buttonmask-content button-add-row">
-                            Добавить в разрешение
-                        </div>
-                    </div>
                 </div>
 			</main>
 			<footer class="footer">
@@ -256,6 +119,6 @@
     </div>
 </footer>
 		</div>
-		<script src="js/app.min.js"></script>
+		<script src="/public/js/app.min.js"></script>
 	</body>	
 </html>

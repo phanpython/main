@@ -3465,3 +3465,273 @@ LINE 1: SELECT * FROM get_protections_nps
  ===================== 
 [2022-04-27 23:43:47] Сообщение: Undefined array key "protection_name"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 120 
  ===================== 
+[2022-04-28 19:59:53] Сообщение: Call to undefined method controllers\MaskAddController::setAddluVarsToTwig(); Файл: C:\OpenServer\domains\trans\app\controllers\MaskAddController.php; Линия: 41 
+ ===================== 
+[2022-04-28 20:01:15] Сообщение: SQLSTATE[HY093]: Invalid parameter number: :npsname; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 99 
+ ===================== 
+[2022-04-28 20:01:58] Сообщение: Undefined variable $npsname; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 144 
+ ===================== 
+[2022-04-28 20:26:29] Сообщение: syntax error, unexpected variable "$location"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 28 
+ ===================== 
+[2022-04-28 20:26:31] Сообщение: syntax error, unexpected variable "$location"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 28 
+ ===================== 
+[2022-04-28 20:26:47] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "standart" не существует
+LINE 4:   join standart on standart.type_workid = type_work.id);
+               ^
+QUERY:  delete from permission__type_work where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id);
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-28 20:27:09] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "standart" не существует
+LINE 4:   join standart on standart.type_workid = type_work.id);
+               ^
+QUERY:  delete from permission__type_work where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id);
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-28 20:30:03] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "standart" не существует
+LINE 4:   join standart on standart.type_workid = type_work.id);
+               ^
+QUERY:  delete from permission__type_work where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id);
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-28 20:30:52] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "standart" не существует
+LINE 4:   join standart on standart.type_workid = type_work.id);
+               ^
+QUERY:  delete from permission__type_work where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select type_work.id from type_work
+  join standart on standart.type_workid = type_work.id);
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-28 20:34:13] Сообщение: Too few arguments to function widgets\protection\Protection::setMaskingProtectionsFromTypicalWorks(), 1 passed in C:\OpenServer\domains\trans\app\models\TypeWorkModel.php on line 28 and exactly 2 expected; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 112 
+ ===================== 
+[2022-04-28 20:34:39] Сообщение: Too few arguments to function widgets\protection\Protection::setMaskingProtectionsFromTypicalWorks(), 1 passed in C:\OpenServer\domains\trans\app\models\TypeWorkModel.php on line 28 and exactly 2 expected; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 112 
+ ===================== 
+[2022-04-28 20:37:24] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "permission__type_work" не существует
+LINE 2: join permission__type_work on permission__type_work.type_wor...
+             ^
+QUERY:  select work.id, work.name from work
+join permission__type_work on permission__type_work.type_workid = work.id
+JOIN type_work on type_work.id = work.type_workid
+where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select work.id from work
+  WHERE type_work.name = 'Типовые')
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-28 20:39:18] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "permission__type_work" отсутствует в предложении FROM
+LINE 5: and permission__type_work.type_workid in (
+            ^
+QUERY:  select work.id, work.name from work
+join permission_work on permission_work.type_workid = work.id
+JOIN type_work on type_work.id = work.type_workid
+where permission_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select work.id from work
+  WHERE type_work.name = 'Типовые')
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-28 20:39:59] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "permission__type_work" не существует
+LINE 2: delete from permission__type_work where permission__type_wor...
+                    ^
+QUERY:  
+delete from permission__type_work where permission__type_work.permissionid = var_permission_id
+and permission__type_work.type_workid in (
+  select work.id from work)
+
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-28 20:42:00] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_from_typical_works(unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_from_typical_works($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-28 21:02:35] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_from_typical_works(unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_from_typical_works($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-28 21:06:31] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 26 
+ ===================== 
+[2022-04-28 21:23:21] Сообщение: Undefined array key "entrance_exit-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-28 21:23:54] Сообщение: Unclosed '[' does not match ')'; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-28 21:25:11] Сообщение: Unclosed '[' does not match ')'; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-28 21:25:58] Сообщение: Unclosed '[' does not match ')'; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 21:26:34] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_from_typical_works(unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_from_typical_works($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-28 21:42:18] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_from_typical_works(unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_from_typical_works($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-28 21:43:08] Сообщение: SQLSTATE[42703]: Undefined column: 7 ОШИБКА:  столбец protection.system_apcs не существует
+LINE 2:  protection.system_apcs
+         ^
+HINT:  Возможно, предполагалась ссылка на столбец "protection.system_apcsid".
+QUERY:  SELECT protection.name,
+	protection.system_apcs
+   FROM work_protection
+     JOIN work ON work.id = work_protection.workid
+     JOIN protection ON  protection.id = work_protection.protectionid
+  		WHERE work.name = var_work::bpchar
+CONTEXT:  функция PL/pgSQL set_masking_protections_from_typical_works(character varying,integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-28 21:44:42] Сообщение: widgets\protection\Protection::setMaskingProtectionsFromTypicalWorks(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 116 
+ ===================== 
+[2022-04-28 22:10:20] Сообщение: syntax error, unexpected token "]"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 45 
+ ===================== 
+[2022-04-28 22:21:31] Сообщение: syntax error, unexpected token "]"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 45 
+ ===================== 
+[2022-04-28 22:22:16] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 38 
+ ===================== 
+[2022-04-28 22:23:38] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "permission__type_work" не существует
+LINE 4:      JOIN permission__type_work ON permission__type_work.typ...
+                  ^
+QUERY:  select permission.id AS permissionid,
+	public.work.name
+   FROM public.work
+     JOIN permission__type_work ON permission__type_work.type_workid = public.work.id
+     JOIN permission ON permission.id = permission__type_work.permissionid
+	  JOIN user_permission ON user_permission.permissionid = permission.id
+	  JOIN "user" ON "user".id = user_permission.userid
+	  join type_person on type_person.id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id
+CONTEXT:  функция PL/pgSQL get_types_works_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 55 
+ ===================== 
+[2022-04-28 22:24:30] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "permission__type_work" не существует
+LINE 3:  join permission__type_work on permission__type_work.type_wo...
+              ^
+QUERY:  SELECT work.name from public.work
+	join type_work on type_work.id = public.work.type_workid
+	join permission__type_work on permission__type_work.type_workid = work.id
+   WHERE permission__type_work.permissionid = var_permission_id and type_work.name = 'Нестандартная'
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-28 22:25:17] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "permission__type_work" отсутствует в предложении FROM
+LINE 3:  join permission_work on permission__type_work.type_workid =...
+                                 ^
+QUERY:  SELECT work.name from public.work
+	join type_work on type_work.id = public.work.type_workid
+	join permission_work on permission__type_work.type_workid = work.id
+   WHERE permission_work.permissionid = var_permission_id and type_work.name = 'Нестандартная'
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-28 22:25:31] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "permission__type_work" отсутствует в предложении FROM
+LINE 3:  join permission_work on permission__type_work.type_workid =...
+                                 ^
+QUERY:  SELECT work.name from public.work
+	join type_work on type_work.id = public.work.type_workid
+	join permission_work on permission__type_work.type_workid = work.id
+   WHERE permission_work.permissionid = var_permission_id and type_work.name = 'Нестандартная'
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-28 22:26:03] Сообщение: Undefined variable $protections; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 46 
+ ===================== 
+[2022-04-28 22:26:49] Сообщение: Undefined variable $protections; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 46 
+ ===================== 
+[2022-04-28 22:38:59] Сообщение: Undefined variable $protections; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 46 
+ ===================== 
+[2022-04-28 22:39:03] Сообщение: Undefined variable $protections; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 46 
+ ===================== 
+[2022-04-28 22:39:54] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:40:40] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:41:02] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:41:31] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:42:45] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:43:34] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:45:20] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:45:42] Сообщение: Undefined array key ""; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-28 22:46:47] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, 2, 1,
+	 (SELECT protection.id
+		FROM work_protection
+		 JOIN work ON work.id = work_protection.workid
+		 JOIN protection ON  protection.id = work_protection.protectionid
+			WHERE work.name = var_work::bpchar), 21)"
+функция PL/pgSQL set_masking_protections_from_typical_works(character varying,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-04-29 13:20:02] Сообщение: SQLSTATE[42601]: Syntax error: 7 ОШИБКА:  в запросе нет назначения для данных результата
+HINT:  Если вам нужно отбросить результаты SELECT, используйте PERFORM.
+CONTEXT:  функция PL/pgSQL get_masking_protections_from_typical_works(character varying,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 123 
+ ===================== 
+[2022-04-29 13:24:06] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-04-29 13:24:33] Сообщение: Undefined array key "protection_id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-04-29 13:25:12] Сообщение: Undefined array key "protection_id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 32 
+ ===================== 
+[2022-04-29 13:25:28] Сообщение: Undefined array key "protection.id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 32 
+ ===================== 
+[2022-04-29 13:25:48] Сообщение: Undefined array key "protection_id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 32 
+ ===================== 
+[2022-04-29 13:26:12] Сообщение: Call to undefined function models\pront_r(); Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 32 
+ ===================== 
+[2022-04-29 13:26:24] Сообщение: Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\trans\app\models\TypeWorkModel.php:32); Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:27:41] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-29 13:27:44] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-29 13:27:54] Сообщение: Array to string conversion; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 33 
+ ===================== 
+[2022-04-29 13:32:24] Сообщение: Undefined constant "models\i"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:32:37] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:49:27] Сообщение: Undefined array key 100; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-29 13:49:56] Сообщение: Undefined array key "protection_id-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:50:48] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:51:12] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:51:25] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-29 13:52:23] Сообщение: syntax error, unexpected variable "$this", expecting "," or ";"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:52:33] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-29 13:53:16] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 35 
+ ===================== 
+[2022-04-29 13:54:22] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 35 
+ ===================== 
+[2022-04-29 13:55:08] Сообщение: syntax error, unexpected token ";"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 36 
+ ===================== 
+[2022-04-29 13:55:18] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 35 
+ ===================== 
+[2022-04-29 13:55:32] Сообщение: Undefined array key 3; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-04-29 18:32:39] Сообщение: Unexpected "}".; Файл: C:\OpenServer\domains\trans\app\views\Permission\add.php; Линия: 146 
+ ===================== 
+[2022-04-29 21:25:26] Сообщение: syntax error, unexpected token "isset", expecting "("; Файл: C:\OpenServer\domains\trans\app\models\PermissionModel.php; Линия: 43 
+ ===================== 
+[2022-04-29 21:25:53] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция del_masks_by_permission_id(unknown, unknown) не существует
+LINE 1: SELECT * FROM del_masks_by_permission_id($1, $2)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
