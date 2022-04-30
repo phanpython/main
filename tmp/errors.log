@@ -3735,3 +3735,27 @@ LINE 1: SELECT * FROM del_masks_by_permission_id($1, $2)
                       ^
 HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
  ===================== 
+[2022-04-30 01:33:25] Сообщение: Undefined array key "idCurrentPermission"; Файл: C:\OpenServer\domains\trans\app\models\PermissionModel.php; Линия: 85 
+ ===================== 
+[2022-04-30 01:51:06] Сообщение: syntax error, unexpected token "public"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 39 
+ ===================== 
+[2022-04-30 02:26:03] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: "entrance-1"
+CONTEXT:  неименованный портал, параметр $4 = '...'; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-30 02:39:56] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
+CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 76 
+ ===================== 
+[2022-04-30 02:41:08] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 76 
+ ===================== 
+[2022-04-30 02:41:23] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
+CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 76 
+ ===================== 
+[2022-04-30 02:42:59] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
+CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 76 
+ ===================== 
+[2022-04-30 02:44:44] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
+CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 
+[2022-04-30 02:47:04] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
+CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
+ ===================== 

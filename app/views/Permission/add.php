@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" >
     <link rel="stylesheet" href="/public/css/style.min.css">
     <title>{{meta.title}}</title>
 </head>
@@ -145,13 +145,13 @@
                                 {% if protection.entrance_name == 'Вход' %}
                                 <div class="table-content-mask__col table-col">
                                     <label class="check-entrance">
-                                        <input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}" checked>
+                                        <input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}" checked hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
                                 <div class="table-content-mask__col table-col">
                                     <label class="check-entrance">
-                                        <input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}">
+                                        <input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}" hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
@@ -161,13 +161,13 @@
                                 {% elseif protection.entrance_name == 'Выход' %}
                                 <div class="table-content-mask__col table-col">
                                     <label class="check-entrance">
-                                        <input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}" >
+                                        <input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}" hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
                                 <div class="table-content-mask__col table-col">
                                     <label class="check-entrance">
-                                        <input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}" checked>
+                                        <input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}" checked hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
@@ -178,27 +178,27 @@
                                 {% if protection.vtor_name == 'Втор' %}
                                 <div class="table-content-mask__col table-col entrance-on"> 
                                     <label class="check-entrance">
-                                        <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" checked>
+                                        <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" checked hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
                                 {% elseif protection.vtor_name == 'Невтор' %}
                                 <div class="table-content-mask__col table-col entrance-on"> 
                                     <label class="check-entrance">
-                                        <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" >
+                                        <input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
                                 {% endif %}
                                 <div class="table-content-mask__col table-col">
-                                    <input type="submit" name="del-masks" id=""  value="Удалить">
+                                    <input type="submit" name="del-masks" value="Удалить">
                                 </div>
                             </div>
                         </form>
                         {% endfor %}
                     </div>
 
-                    <a href="http://trans/mask-add" class="permission-add__button input button sticky">Добавить защиты</a>
+                    <a href="http://trans/mask-add" class="permission-add__button input button">Добавить защиты</a>
 
                     <div class="permission-add__item">
                         <div class="permission-add__subtitle">

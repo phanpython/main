@@ -57,23 +57,23 @@ class Protection
         return $stmt->fetchAll();
     }
 
-    public function setMaskingProtectionsEntrance($protection, $locations, $entrance_exit, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_entrance(:protection, :locations, :entrance_exit, :permission_id)";
+    public function setMaskingProtectionsEntrance($protectionId, $locations, $entrance_exit, $permissionId) {
+        $query = "SELECT * FROM set_masking_protections_entrance(:protection_id, :locations, :entrance_exit, :permission_id)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection' => $protection, 'locations' => $locations, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
+        $stmt->execute(array('protection_id' => $protectionId, 'locations' => $locations, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
     }
 
     
-    public function setMaskingProtectionsEntranceVtor($protection, $locations, $entrance_exit, $vtor, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_entrance_vtor(:protection, :locations, :entrance_exit,:vtor , :permission_id)";
+    public function setMaskingProtectionsEntranceVtor($protectionId, $locations, $entrance_exit, $vtor, $permissionId) {
+        $query = "SELECT * FROM set_masking_protections_entrance_vtor(:protection_id, :locations, :entrance_exit,:vtor , :permission_id)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection' => $protection, 'locations' => $locations, 'entrance_exit' => $entrance_exit,'vtor' =>  $vtor, 'permission_id' => $permissionId));
+        $stmt->execute(array('protection_id' => $protectionId, 'locations' => $locations, 'entrance_exit' => $entrance_exit,'vtor' =>  $vtor, 'permission_id' => $permissionId));
     }
 
-    public function setMaskingProtectionsExit($protection,$entrance_exit, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_exit(:protection, :entrance_exit, :permission_id)";
+    public function setMaskingProtectionsExit($protectionId, $entrance_exit, $permissionId) {
+        $query = "SELECT * FROM set_masking_protections_exit(:protection_id, :entrance_exit, :permission_id)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection' => $protection, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
+        $stmt->execute(array('protection_id' => $protectionId, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
     }
 
 

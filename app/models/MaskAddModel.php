@@ -18,13 +18,13 @@ class MaskAddModel
             for($i = 1; $i < 100; $i++) {
                 if(isset($_POST["add-system-$i"])){
                     if(($_POST["entrance_exit-$i"] == "exit-$i")){
-                        $this->protection->setMaskingProtectionsExit($_POST['protection-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtectionsExit($_POST['protection_id-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
                     }
                     elseif (($_POST["entrance_exit-$i"] == "entrance-$i") and (isset($_POST["vtor-$i"]))) {
-                        $this->protection->setMaskingProtectionsEntranceVtor($_POST['protection-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_POST['vtor-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtectionsEntranceVtor($_POST['protection_id-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_POST['vtor-' . $i], $_SESSION['idCurrentPermission']);
                     }   
                     elseif ($_POST["entrance_exit-$i"] == "entrance-$i"){
-                        $this->protection->setMaskingProtectionsEntrance($_POST['protection-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtectionsEntrance($_POST['protection_id-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
                     }    
                 }
                 

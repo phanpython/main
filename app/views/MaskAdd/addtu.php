@@ -48,6 +48,7 @@
 						<form action="" method="post" class="content-mask__table table-content-mask table-systems">
                             <div class="table-content-mask__rows table-content-mask__row_header">
 								<div class="table-content-mask__col table-content-mask__head" name="tu-1">{{title}}</div>
+								<input type="text" name="system" value="ЦСПА" hidden>
 							</div>
 							<div class="table-content-mask__rows table-content-mask__row_head">
 								<div class="table-content-mask__col table-content-mask__head" name="add-system">Выбрать защиту</div>
@@ -64,22 +65,23 @@
 							<div class="table-content-mask__rows table-row">
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-{{i}}">
+										<input type="checkbox" class="check-entrance__input add-system" name="add-system-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col">
+									<input type="text" name="protection_id-{{i}}" value="{{protection.id}}" hidden>
 									<input type="text" name="protection-{{i}}" class="table-mask-col__input protection input-row" value="{{protection.protection_name}}" required="required" readonly>
 								</div>
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}">
+										<input type="radio" class="check-entrance__input entrance-{{i}} input-row" name="entrance_exit-{{i}}" value="entrance-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}">
+										<input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
@@ -88,7 +90,7 @@
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}">
+										<input type="checkbox" class="check-entrance__input vtor" name="vtor-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
