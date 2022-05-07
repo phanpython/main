@@ -26,13 +26,12 @@ class TypeWorkModel
         if(isset($_POST['add-protections'])) {
             for($i = 1; $i < 100; $i++) {
                 if(isset($_POST["typical_work-$i"])){
-                    $protections =  $this->protection->getMaskingProtectionsFromTypicalWorks($_POST["work_name-$i"], $_SESSION['idCurrentPermission']);
-                   // $this->protection->setMaskingProtectionsFromTypicalWorks($_POST["work_name-$i"], $_SESSION['idCurrentPermission']);
+                    $protections =  $this->protection->getMaskingProtectionsFromTypicalWorks($_POST["typical_work_name-$i"], $_SESSION['idCurrentPermission']);
                 }
             }
             $j = 0;
             while( $j < count($protections)){
-                $this->protection->setMaskingProtectionsFromTypicalWorks(($protections[$j]['protection_id']), $_SESSION['idCurrentPermission']);
+                $this->protection->setMaskingProtectionsFromTypicalWorks(($protections[$j]['protection_id']), ($protections[$j]['vtor_id']), ($protections[$j]['entrance_id']), ($protections[$j]['object_id']), $_SESSION['idCurrentPermission']);
                 $j++;
             }
             
@@ -46,7 +45,7 @@ class TypeWorkModel
     public function getArrForTwig():array {
         
         if(isset($_COOKIE['user'])) {
-            return ['works' => $this->typeWork->getTypicalWorks(),
+            return ['typical_works' => $this->typeWork->getTypicalWorks(),
                 'current_types_works' => $this->typeWork->getTypicalWorksByPermissionId($_SESSION['idCurrentPermission'])];
         }
     }

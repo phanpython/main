@@ -31,14 +31,19 @@
     </div>
 </header>
 			<main class="content-mask">
+				<div class="navigation-chain-mask">
+					<div class="navigation-chain-mask__item"><a href="http://trans/permission">Разрешения / </a></div>
+					<div class="navigation-chain-mask__item"><a href="http://trans/permission/add">Добавление разрешения / </a></div>
+					<div class="navigation-chain-mask__item navigation-chain__item_active">Выбор системы маскирования</div>
+				</div>
 				<div class="content-maskadd__body">
 					<div class="content-maskadd__systems">
 						<div class="content-maskadd__system-header">Выберите систему:</div>
 						<div class="system-block">
 							<div class="system-block__header">ЦСПА:</div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=1">ТУ1</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=2">ТУ2</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=3">ТУ3</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=Технологический участок 1">ТУ1</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=Технологический участок 2">ТУ2</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addtu/?id=Технологический участок 3">ТУ3</a></div>
 						</div>
 						<div class="system-block">
 							<div class="system-block__header">МПСА:</div>
@@ -60,9 +65,9 @@
 						</div>
 						<div class="system-block">
 							<div class="system-block__header">СОУ:</div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ1">ЛУ1</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ2">ЛУ2</a></div>
-							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=ЛУ3">ЛУ3</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 1">ЛУ1</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 2">ЛУ2</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 3">ЛУ3</a></div>
 						</div>
 						
 

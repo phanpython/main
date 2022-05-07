@@ -8,29 +8,35 @@
 	<title>{{meta.title}}</title>
 </head>
 	<body>
-		<div class="wrap">
-			<header class="header">
-    <div class="header__body _container">
-        <img class="header__logo" src="/public/img/logo.png" alt="">
-        <div class="header__icons">
-            <div class="header__icon">
-                <a href="permission.html" class="header__link">
-                    <span class="icon-user"></span>
-                    <span class="header__subtitle">
-                        Разрешения
-                    </span>
-                </a>
-            </div>
-            <div class="header__icon icon_reg_auth">
-                <span class="icon-user"></span>
-                <span class="header__subtitle">
-                    Войти
-                </span>
-            </div>
-        </div>
-    </div>
-</header>
+	<div class="wrap">
+		<header class="header">
+			<div class="header__body _container">
+				<img class="header__logo" src="/public/img/logo.png" alt="">
+				<div class="header__icons">
+					<div class="header__icon">
+						<a href="permission.html" class="header__link">
+							<span class="icon-user"></span>
+							<span class="header__subtitle">
+								Разрешения
+							</span>
+						</a>
+					</div>
+					<div class="header__icon icon_reg_auth">
+						<span class="icon-user"></span>
+						<span class="header__subtitle">
+							Войти
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
 			<main class="content-mask">
+				<div class="navigation-chain-mask" >
+					<div class="navigation-chain-mask__item"><a href="http://trans/permission">Разрешения / </a></div>
+					<div class="navigation-chain-mask__item"><a href="http://trans/permission/add">Добавление разрешения / </a></div>
+					<div class="navigation-chain-mask__item"><a href="http://trans/mask-add">Выбор системы маскирования / </a></div>
+					<div class="navigation-chain-mask__item navigation-chain-mask__item_active">{{title}}</div>
+				</div>
                 <div class="content-mask__body">
 					<div class="content-mask__search-box">
 						<div class="content-mask__search">
@@ -55,8 +61,8 @@
 								<div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
 								<div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
 								<div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
-								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Локация</div>
-								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект(задвижка и тп.)</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">ВТОР</div>
 							</div>
 							<!---->
 							{% set i = 0 %}
@@ -65,7 +71,7 @@
 							<div class="table-content-mask__rows table-row">
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-{{i}}" hidden>
+										<input type="checkbox" class="check-entrance__input add-system-{{i}}" name="add-system-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
@@ -86,7 +92,7 @@
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите объект" value="" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">
@@ -98,7 +104,7 @@
 							{% endfor %}
 							<!---->
 							<div class="permission-addmask__block">
-							<input type="submit"  name="add-masks" class="permission-addmask__button input button" value="Добавить защиты в разрешение">
+								<input type="submit"  name="add-masks" class="permission-addmask__button input button" value="Добавить защиты в разрешение">
 							</div>
 						</form>
 					{% endif %}

@@ -50,27 +50,29 @@
                 <div action="http://trans/typework" method="post" class="content__types-work">
                     <div class="content__typical-work typical-work">
                         {% set i = 0 %}
-                        {% for work in works %}
+                        {% for typical_work in typical_works %}
                         {% set i = i + 1 %}
                         <div class="typical-work__item">
                             {% set fl = false %}
                             {% for current_type_work in current_types_works %}
-                                {% if current_type_work.id == type_work.type_workid %}
+                                {% if current_type_work.id == typical_work.type_workid %}
                                     {% set fl = true %}
                                 {% endif %}
                             {% endfor %}
-                            <label for="type_work_{{type_work.type_workid}}" class="typical-work__main">
-                                <input type="hidden" class="typical-work__name" name="work_name-{{i}}" value="{{work.name}}" >
-                                <div class="typical-work__name" >
-                                    {{work.name}}
+                            <input type="text" hidden name="typical_work_name-{{i}}" value="{{typical_work.name}}">
+                            <label class="typical-work__name">
+                                <div class="typical_work__name" >
+                                    {{typical_work.name}}
                                 </div>
                                 {% if fl == true %}
-                                <input id="type_work_{{type_work.type_workid}}" name="typical_work-{{i}}" checked="checked" class="typical-work__checkbox" type="checkbox">
+                                <input id="typical_work_{{typical_work.typical_workid}}" name="typical_work-{{i}}" checked="checked" class="check-typical__input" type="checkbox" hidden>
+                                <span class="check-typical__span"></span>
                                 {% else %}
-                                <input id="type_work_{{type_work.type_workid}}" name="typical_work-{{i}}" class="typical-work__checkbox" type="checkbox">
+                                <input id="typical_work_{{typical_work.typical_workid}}" name="typical_work-{{i}}" class="check-typical__input" type="checkbox" hidden>
+                                <span class="check-typical__span"></span>
                                 {% endif %}
                             </label>
-                            <textarea class="typical-work__textarea textarea" name="typical-work_{{type_work.name}}" id=""></textarea>
+                            <textarea class="typical-work__textarea textarea" name="typical-work_{{typical_work.name}}" id=""></textarea>
                         </div>
                         {% endfor %}
                         <input type="text" hidden class="array_types_works" name="types_works" id="">

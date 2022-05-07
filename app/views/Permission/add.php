@@ -70,7 +70,7 @@
                         <div class="permission-add__block">
                             <textarea readonly class="permission-add__textarea textarea" name="untypical_works" id="untypical_works" cols="30" rows="10" placeholder="Введите нетиповые работы...">{{untypical_work}}</textarea>
                         </div>
-                        <a href="http://trans/type-work" class="permission-add__button permission-add__button_margin input button" style="width: 350px">Выбрать типы работ</a>
+                        <a href="http://trans/type-work" class="permission-add__button permission-add__button-margin input button" style="width: 350px">Выбрать типы работ</a>
                     </div>
                     <div class="permission-add__item">
                         <div class="permission-add__subtitle">
@@ -126,7 +126,7 @@
                             <div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
                             <div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
                             <div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
-                            <div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Локация</div>
+                            <div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="delete-mask">Удалить</div>  
                         </div>
@@ -191,14 +191,17 @@
                                 </div>
                                 {% endif %}
                                 <div class="table-content-mask__col table-col">
-                                    <input type="submit" name="del-masks" value="Удалить">
+                                    <label class="check-entrance">
+                                    <input type="submit" name="del-masks" value="Удалить" hidden>
+                                    <span class="icon-clear permission-add__clear"></span>
+                                    </label>
                                 </div>
                             </div>
                         </form>
                         {% endfor %}
                     </div>
 
-                    <a href="http://trans/mask-add" class="permission-add__button input button">Добавить защиты</a>
+                    <a href="http://trans/mask-add" class="permission-add__button-mask input button">Добавить маскирование защиты</a>
 
                     <div class="permission-add__item">
                         <div class="permission-add__subtitle">

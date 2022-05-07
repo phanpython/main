@@ -35,70 +35,26 @@ class MaskAddModel
         }
     }
 
-    
     public function getAddtuVarsToTwig():array {
 
         if(isset($_GET['id'])){
-            if ($_GET['id'] == 1) {
-                $k = 1;
-                if(isset($_POST['search_info'])) {
-                    $message = 'Совпадений не найдено';
-                    $search = '%' . trim($_POST['search_info']) . '%';
-                    $protection =$this->protection->getProtectionsTu1Search($search);
-        
-                } else {
-                    $message = 'Список защит пуст';
-                    $protection = $this->protection->getProtectionsTu1();
-                }
-                if(isset($_COOKIE['user'])) {
-                    return ['protections' => $protection,
-                        'message' => $message,
-                        'title'=> 'ТУ1'
-                    ];
-                } else {
-        
-                }
-            
+            $tuname = $_GET['id'];
+            if(isset($_POST['search_info'])) {
+                $message = 'Совпадений не найдено';
+                $search = '%' . trim($_POST['search_info']) . '%';
+                $protection =$this->protection->getProtectionsTuSearch($tuname, $search);
+    
+            } else {
+                $message = 'Список защит пуст';
+                $protection = $this->protection->getProtectionsTu($tuname);
             }
-            elseif ($_GET['id'] == 2) {
-
-                if(isset($_POST['search_info'])) {
-                    $message = 'Совпадений не найдено';
-                    $search = '%' . trim($_POST['search_info']) . '%';
-                    $protection =$this->protection->getProtectionsTu2Search($search);
-        
-                } else {
-                    $message = 'Список защит пуст';
-                    $protection = $this->protection->getProtectionsTu2();
-                }
-                if(isset($_COOKIE['user'])) {
-                    return ['protections' => $protection,
-                        'message' => $message,
-                        'title'=> 'ТУ2'
-                    ];
-                } else {
-        
-                }
-            
-            }
-
-            elseif ($_GET['id'] == 3) {
-                if(isset($_POST['search_info'])) {
-                    $message = 'Совпадений не найдено';
-                    $search = '%' . trim($_POST['search_info']) . '%';
-                    $protection =$this->protection->getProtectionsTu3Search($search);
-                } else {
-                    $message = 'Список защит пуст';
-                    $protection = $this->protection->getProtectionsTu3();
-                }
-                if(isset($_COOKIE['user'])) {
-                    return ['protections' => $protection,
-                        'message' => $message,
-                        'title'=> 'ТУ3'
-                    ];
-                } 
-            
-            }
+            if(isset($_COOKIE['user'])) {
+                return ['protections' => $protection,
+                    'message' => $message,
+                    'title'=> $tuname
+                ];
+            } 
+                
         }
     }
 
@@ -110,19 +66,24 @@ class MaskAddModel
                 $message = 'Совпадений не найдено';
                 $search = '%' . trim($_POST['search_info']) . '%';
                 $protection =$this->protection->getProtectionsNpsSearch($npsname, $search);
-    
+                $types = $this->protection->getTypesWithoutParent();
             } else {
                 $message = 'Список защит пуст';
                 $protection = $this->protection->getProtectionsNps($npsname);
+                $types = $this->protection->getTypesWithoutParent();
             }
+
+
             if(isset($_COOKIE['user'])) {
                 return ['protections' => $protection,
                     'message' => $message,
-                    'title'=> $npsname
+                    'title'=> $npsname,
+                    'types' => $types
                 ];
             } 
                 
         }
+
     }
 
     public function getAddluVarsToTwig():array {

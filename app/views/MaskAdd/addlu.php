@@ -46,7 +46,7 @@
                     	<div class="table_error_message">{{message}}</div>
                 	{% else %}
 						<form method="post" class="content-mask__table table-content-mask table-systems">
-                            <div class="table-content-mask__rows table-content-mask__row_head">
+                            <div class="table-content-mask__rows table-content-mask__row_header">
 								<div class="table-content-mask__col table-content-mask__head" name="tu-1">{{title}}</div>
 								<input type="text" name="system" value="СОУ" hidden>
 							</div>
@@ -55,8 +55,8 @@
 								<div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
 								<div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
 								<div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
-								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Локация</div>
-								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект(задвижка и тп.)</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">ВТОР</div>
 							</div>
 							<!---->
 							{% set i = 0 %}
@@ -65,7 +65,7 @@
 							<div class="table-content-mask__rows table-row">
 								<div class="table-content-mask__col table-col">
 									<label class="check-entrance">
-										<input type="checkbox" class="check-entrance__input add-system" name="add-system-{{i}}" hidden>
+										<input type="checkbox" class="check-entrance__input add-system-{{i}}" name="add-system-{{i}}" hidden>
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
@@ -86,7 +86,7 @@
 									</label>
 								</div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
-									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите локацию" value="" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите объект" value="" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">

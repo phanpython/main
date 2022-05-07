@@ -3759,3 +3759,169 @@ CONTEXT:  неименованный портал, параметр $1 = ''; Ф�
 [2022-04-30 02:47:04] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: ""
 CONTEXT:  неименованный портал, параметр $1 = ''; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 63 
  ===================== 
+[2022-04-30 21:13:16] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "public.work" не существует
+LINE 3:    FROM public.work
+                ^
+QUERY:  select permission.id AS permissionid,
+	public.work.name
+   FROM public.work
+     JOIN permission_work ON permission_work.type_workid = public.work.id
+     JOIN permission ON permission.id = permission_work.permissionid
+	  JOIN user_permission ON user_permission.permissionid = permission.id
+	  JOIN "user" ON "user".id = user_permission.userid
+	  join type_person on type_person.id = user_permission.type_personid
+	   WHERE type_person.name = 'Автор' and "user".id = var_user_id
+CONTEXT:  функция PL/pgSQL get_types_works_by_user_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 55 
+ ===================== 
+[2022-04-30 21:29:36] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "work" не существует
+LINE 1: select work.id, work.name from work
+                                       ^
+QUERY:  select work.id, work.name from work
+join permission_work on permission_work.type_workid = work.id
+JOIN type_work on type_work.id = work.type_workid
+where permission_work.permissionid = var_permission_id
+and permission_work.type_workid in (
+  select work.id from work
+  WHERE type_work.name = 'Типовые')
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-30 21:32:05] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "type_work" не существует
+LINE 3: JOIN type_work on type_work.id = typical_work.type_workid
+             ^
+QUERY:  select typical_work.id, typical_work.name from typical_work
+join permission_work on permission_work.type_workid = typical_work.id
+JOIN type_work on type_work.id = typical_work.type_workid
+where permission_work.permissionid = var_permission_id
+CONTEXT:  функция PL/pgSQL get_typical_works_by_permission_id(integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 25 
+ ===================== 
+[2022-04-30 21:32:25] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "public.work" не существует
+LINE 1: SELECT work.name from public.work
+                              ^
+QUERY:  SELECT work.name from public.work
+	join type_work on type_work.id = public.work.type_workid
+	join permission_work on permission_work.type_workid = work.id
+   WHERE permission_work.permissionid = var_permission_id and type_work.name = 'Нестандартная'
+CONTEXT:  функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-30 21:34:44] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип text не соответствует ожидаемому типу character varying в столбце 1.
+CONTEXT:  SQL-оператор: "SELECT permission.untypical_work from permission
+	join permission_work on permission_work.permissionid = permission.id
+   WHERE permission_work.permissionid = var_permission_id"
+функция PL/pgSQL get_untypical_work_of_permission(integer), строка 4, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 166 
+ ===================== 
+[2022-04-30 21:35:29] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(21) отсутствует в таблице "object".
+CONTEXT:  SQL-функция "set_masking_protections_exit", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 76 
+ ===================== 
+[2022-04-30 21:42:03] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_typical_works" не существует
+LINE 1: SELECT * FROM get_typical_works
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 17 
+ ===================== 
+[2022-04-30 21:49:40] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_typical_works" не существует
+LINE 1: SELECT * FROM get_typical_works
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 17 
+ ===================== 
+[2022-04-30 21:59:23] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "work" не существует
+LINE 4:   select work.id from work
+                              ^
+QUERY:  
+delete from permission_work where permission_work.permissionid = var_permission_id
+and permission_work.type_workid in (
+  select work.id from work
+	JOIN type_work ON type_work.id = work.type_workid
+		WHERE type_work.name = 'Типовые')
+
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-30 22:01:10] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "work" не существует
+LINE 4:   select work.id from work
+                              ^
+QUERY:  
+delete from permission_work where permission_work.permissionid = var_permission_id
+and permission_work.type_workid in (
+  select work.id from work
+	JOIN type_work ON type_work.id = work.type_workid
+		WHERE type_work.name = 'Типовые')
+
+CONTEXT:  внедрённая в код SQL-функция "del_typical_works_by_permission_id"; Файл: C:\OpenServer\domains\trans\app\widgets\typework\TypeWork.php; Линия: 33 
+ ===================== 
+[2022-04-30 22:10:32] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "work" не существует
+LINE 3:    JOIN work ON work.id = work_protection.workid
+                ^
+QUERY:  SELECT protection.id
+		FROM work_protection
+		 JOIN work ON work.id = work_protection.workid
+		 JOIN protection ON  protection.id = work_protection.protectionid
+			WHERE work.name = var_work::bpchar
+CONTEXT:  функция PL/pgSQL get_masking_protections_from_typical_works(character varying,integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 123 
+ ===================== 
+[2022-05-01 10:19:52] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(21) отсутствует в таблице "object".
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, 2, 1,var_protection_id, 21)"
+функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-05-01 10:27:31] Сообщение: syntax error, unexpected token ","; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 35 
+ ===================== 
+[2022-05-01 10:28:02] Сообщение: syntax error, unexpected token ","; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 35 
+ ===================== 
+[2022-05-01 10:28:59] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(21) отсутствует в таблице "object".
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, 2, 1,var_protection_id, 21)"
+функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-05-01 10:30:45] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(21) отсутствует в таблице "object".
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, 2, 1,var_protection_id, 21)"
+функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-05-01 10:31:51] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_from_typical_works(unknown, unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_from_typical_works($1,...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-05-01 10:35:43] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(84) отсутствует в таблице "object".
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, var_vtor_id, var_entrance_id,var_protection_id, var_permission_id)"
+функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer,integer,integer,integer), строка 3, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 115 
+ ===================== 
+[2022-05-01 13:30:44] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 29 
+ ===================== 
+[2022-05-01 13:32:59] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-05-01 13:35:04] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-05-01 13:35:35] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-05-01 13:36:04] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-05-01 13:37:37] Сообщение: Undefined array key "work_name-1"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 30 
+ ===================== 
+[2022-05-01 16:10:37] Сообщение: Undefined array key "entrance_exit-1"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 20 
+ ===================== 
+[2022-05-01 16:11:23] Сообщение: Undefined array key "entrance_exit-3"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 20 
+ ===================== 
+[2022-05-01 19:26:53] Сообщение: Undefined array key "idCurrentPermission"; Файл: C:\OpenServer\domains\trans\app\models\PermissionModel.php; Линия: 85 
+ ===================== 
+[2022-05-01 21:21:02] Сообщение: Контроллер controllers\ResponsibleController не найден; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 37 
+ ===================== 
+[2022-05-02 12:57:55] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_permissions_by_user_id(unknown) не существует
+LINE 1: SELECT * FROM get_permissions_by_user_id($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 25 
+ ===================== 
+[2022-05-03 15:18:42] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция get_protections_tu(unknown) не существует
+LINE 1: SELECT * FROM get_protections_tu($1)
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 44 
+ ===================== 
+[2022-05-03 20:50:57] Сообщение: Undefined property: models\MaskAddModel::$subdivision; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 129 
+ ===================== 
+[2022-05-03 21:04:13] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "get_types" не существует
+LINE 1: SELECT * FROM get_types
+                      ^; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 164 
+ ===================== 
