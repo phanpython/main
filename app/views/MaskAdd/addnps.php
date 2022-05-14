@@ -36,28 +36,16 @@
 			<div class="content-mask__body">
 				<div class="content-mask__search-box">
 					<div class="content-mask__search">
-						<div class="responsible__sidebar">
-							<div class="tree responsible__tree">
-								<div class="tree__content">
-									<div class="tree__list">
-										{% for type in types %}
-										<div class="tree__item tree__item_top">
-											<input type="text" hidden value="{{type.id}}" class="tree__input">
-											<div class="tree__item-block">
-												<span class="icon-square-plus-solid tree__plus tree__plus_active"></span>
-												<div class="tree__text">
-													{{type.name}}
-												</div>
-											</div>
-										</div>
-										{% endfor %}
-									</div>
-								</div>
-							</div>
-						</div>
-						<form action="" method="post" class="tree-send">
-							<input type="text" name="tree" class="tree-send__input">
+						<form method="post" class="type-select">
+							<select class="filter-content-mask__select" name="filter-type">
+								<option class="filter-content-mask__option">Выберите тип защиты</option>
+								<option value="all" class="filter-content-mask__option">Все</option>
+								<option value="obchestan" class="filter-content-mask__option">Общестанционные</option>
+								<option value="agregat" class="filter-content-mask__option">Агрегатные</option>
+							</select>
+							<input type="submit" hidden name="type-select-submit" class="permission-search">
 						</form>
+		 				<!--  <div class="input button button-content filter-mask">Фильтры</div> -->
 						<form method="post" class="content-search">
 							<input type="text" name="search_info" class="input-mask" placeholder="Поиск по названию защиты...">
 							<span class="icon-search"></span>
@@ -66,7 +54,27 @@
 					</div>
 				</div>
 				<div class="responsible__main ">
-
+<!-- 					<div class="content__filter filter-content-mask">
+						<div class="filter-content-mask__block filter-block">
+								<div class="filter-content-mask__list">
+									<form method="post" class="type-select">
+										<select class="filter-content-mask__select" name="filter-type">
+											<option class="filter-content-mask__option">Выберите тип</option>
+											<option value="all" class="filter-content-mask__option">Все</option>
+											<option value="obchestan" class="filter-content-mask__option">Общестанционные</option>
+											<option value="agregat" class="filter-content-mask__option">Агрегатные</option>
+										</select>
+										<input type="submit" hidden name="type-select-submit" class="permission-search">
+									</form>
+									<form method="post" class="filter-search">
+										<input type="text" name="search_type" class="filter-content-mask__search" placeholder="Поиск по типу системы...">
+										<span class="filter-content-mask__icon icon-search-filter"></span>
+										<input type="submit" hidden name="responsible-search" class="permission-search">
+									</form>
+								</div>
+							<div class="input button filter-content__button close-filter-mask">Закрыть</div>
+						</div>
+					</div> -->
 					<div class="form-mask">
 						{% if protections|length == 0 %}
 						<div class="table_error_message">{{message}}</div>
@@ -81,6 +89,7 @@
 								<div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
 								<div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
 								<div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="type_location">Тип объекта</div>
 								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект(задвижка и тп.)</div>
 								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">ВТОР</div>
 							</div>
@@ -111,8 +120,11 @@
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
-								<div class="table-content-mask__col table-col col-first entrance-on">
-									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите объект" value="">
+								<div class="table-content-mask__col table-col entrance-on" >
+                                    <input type="text" name="type_location-{{i}}" class="table-col__input type_location input-row" placeholder="Введите тип объект" value="">
+                                </div>
+								<div class="table-content-mask__col table-col col-first entrance-on" >
+									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите объект" value="" >
 								</div>
 								<div class="table-content-mask__col table-col entrance-on">
 									<label class="check-entrance">
@@ -148,6 +160,7 @@
 		</footer>
 	</div>
 	<script src="/public/js/app.min.js"></script>
+	<script src="/public/js/ajax.js"></script>
 </body>
 
 </html>

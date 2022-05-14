@@ -68,6 +68,17 @@
 							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 1">ЛУ1</a></div>
 							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 2">ЛУ2</a></div>
 							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 3">ЛУ3</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 4">ЛУ4</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 5">ЛУ5</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 6">ЛУ6</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 7">ЛУ7</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 8">ЛУ8</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 9">ЛУ9</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 10">ЛУ10</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 11">ЛУ11</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 12">ЛУ12</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 13">ЛУ13</a></div>
+							<div class="system-block__element"><a href="http://trans/mask-add/addlu/?id=Линейный участок 14">ЛУ14</a></div>
 						</div>
 						
 
@@ -91,5 +102,6 @@
 </footer>
 		</div>
 		<script src="js/app.min.js"></script>
+		<script src="js/ajax.js"></script>
 	</body>	
 </html>

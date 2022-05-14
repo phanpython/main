@@ -55,6 +55,7 @@
 								<div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
 								<div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
 								<div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
+								<div class="table-content-mask__col table-content-mask__head entrance-on" name="type_location">Тип объекта</div>
 								<div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект(задвижка и тп.)</div>
 								<div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">ВТОР</div>
 							</div>
@@ -85,6 +86,9 @@
 										<span class="check-entrance__span"></span>
 									</label>
 								</div>
+								<div class="table-content-mask__col table-col entrance-on" >
+                                    <input type="text" name="type_location-{{i}}" class="table-col__input type_location input-row" placeholder="Введите тип объект" value="">
+                                </div>
 								<div class="table-content-mask__col table-col col-first entrance-on" >
 									<input type="text" name="location-{{i}}" class="table-col__input location input-row" placeholder="Введите объект" value="" >
 								</div>

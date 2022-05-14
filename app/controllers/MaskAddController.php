@@ -15,6 +15,13 @@ class MaskAddController extends AppController
         $this->setMeta('Выбор системы');
         $this->model = new MaskAddModel();
 
+        
+
+        if(isset($_REQUEST['select_value'])){
+            echo print_r($_REQUEST['select_value']);
+            echo print_r('Нет');
+        }
+
     }
 
     public function addtuAction() {
@@ -29,6 +36,11 @@ class MaskAddController extends AppController
         $this->checkAuthorization();
         $this->setMeta('Добавление защит на НПС');
         $this->model = new MaskAddModel();
+
+        if(isset($_REQUEST['select_value'])){
+            echo print_r($_REQUEST['select_value']);
+            echo print_r('Нет');
+        }
 
         $this->setAddnpsVarsToTwig();
     }

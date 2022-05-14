@@ -31,7 +31,7 @@ class TypeWorkModel
             }
             $j = 0;
             while( $j < count($protections)){
-                $this->protection->setMaskingProtectionsFromTypicalWorks(($protections[$j]['protection_id']), ($protections[$j]['vtor_id']), ($protections[$j]['entrance_id']), ($protections[$j]['object_id']), $_SESSION['idCurrentPermission']);
+                $this->protection->setMaskingProtectionsFromTypicalWorks(($protections[$j]['protection_id']), ($protections[$j]['vtor_id']), ($protections[$j]['entrance_id']), ($protections[$j]['type_object_id']), $_SESSION['idCurrentPermission']);
                 $j++;
             }
             

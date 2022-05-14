@@ -12,28 +12,11 @@ class Protection
         $this->pdo = DB::getPDO();
     }
 
-    /* На вход */
 
-    public function setMaskingProtectionsEntrance($protectionId, $locations, $entrance_exit, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_entrance(:protection_id, :locations, :entrance_exit, :permission_id)";
+    public function setMaskingProtections($protectionId, $entrance_exit, $type_locations, $locations, $vtor, $permissionId) {
+        $query = "SELECT * FROM set_masking_protections(:protection_id, :entrance_exit, :type_locations, :locations, :vtor ,  :permission_id)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection_id' => $protectionId, 'locations' => $locations, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
-    }
-
-    /* На вход со втором */
-    
-    public function setMaskingProtectionsEntranceVtor($protectionId, $locations, $entrance_exit, $vtor, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_entrance_vtor(:protection_id, :locations, :entrance_exit,:vtor , :permission_id)";
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection_id' => $protectionId, 'locations' => $locations, 'entrance_exit' => $entrance_exit,'vtor' =>  $vtor, 'permission_id' => $permissionId));
-    }
-
-    /* На выход */
-
-    public function setMaskingProtectionsExit($protectionId, $entrance_exit, $permissionId) {
-        $query = "SELECT * FROM set_masking_protections_exit(:protection_id, :entrance_exit, :permission_id)";
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('protection_id' => $protectionId, 'entrance_exit' => $entrance_exit, 'permission_id' => $permissionId));
+        $stmt->execute(array('protection_id' => $protectionId, 'entrance_exit' => $entrance_exit, 'type_locations' => $type_locations, 'locations' => $locations, 'vtor' =>  $vtor,  'permission_id' => $permissionId));
     }
     
     /* ТУ */
@@ -56,10 +39,10 @@ class Protection
 
     /* НПС */ 
 
-    public function getProtectionsNps($npsname):array {
-        $query = "SELECT * FROM get_protections_nps(:npsname)";
+    public function getProtectionsNps($npsname, $typeobjectId):array {
+        $query = "SELECT * FROM get_protections_nps(:npsname, :typeobject_id)";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute(array('npsname' => $npsname));
+        $stmt->execute(array('npsname' => $npsname, 'typeobject_id' => $typeobjectId));
         return $stmt->fetchAll();
     }
 

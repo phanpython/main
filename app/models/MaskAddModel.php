@@ -18,13 +18,13 @@ class MaskAddModel
             for($i = 1; $i < 100; $i++) {
                 if(isset($_POST["add-system-$i"])){
                     if(($_POST["entrance_exit-$i"] == "exit-$i")){
-                        $this->protection->setMaskingProtectionsExit($_POST['protection_id-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtections($_POST['protection_id-' . $i], $_POST['entrance_exit-' . $i], '', '', '', $_SESSION['idCurrentPermission']);
                     }
                     elseif (($_POST["entrance_exit-$i"] == "entrance-$i") and (isset($_POST["vtor-$i"]))) {
-                        $this->protection->setMaskingProtectionsEntranceVtor($_POST['protection_id-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_POST['vtor-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtections($_POST['protection_id-' . $i], $_POST['entrance_exit-' . $i], $_POST['type_location-' . $i],  $_POST['location-' . $i], $_POST['vtor-' . $i], $_SESSION['idCurrentPermission']);
                     }   
                     elseif ($_POST["entrance_exit-$i"] == "entrance-$i"){
-                        $this->protection->setMaskingProtectionsEntrance($_POST['protection_id-' . $i], $_POST['location-' . $i], $_POST['entrance_exit-' . $i], $_SESSION['idCurrentPermission']);
+                        $this->protection->setMaskingProtections($_POST['protection_id-' . $i], $_POST['entrance_exit-' . $i], $_POST['type_location-' . $i], $_POST['location-' . $i], '', $_SESSION['idCurrentPermission']);
                     }    
                 }
                 
@@ -67,9 +67,28 @@ class MaskAddModel
                 $search = '%' . trim($_POST['search_info']) . '%';
                 $protection =$this->protection->getProtectionsNpsSearch($npsname, $search);
                 $types = $this->protection->getTypesWithoutParent();
-            } else {
+            } 
+            elseif(isset($_POST['filter-type'])){
+                echo print_r($_POST['filter-type']);
+                if($_POST['filter-type'] == "all"){
+                    $message = 'Список защит пуст';
+                    $protection = $this->protection->getProtectionsNps($npsname, 0);
+                    $types = $this->protection->getTypesWithoutParent();
+                }
+                elseif($_POST['filter-type'] == "obchestan"){
+                    $message = 'Список защит пуст';
+                    $protection = $this->protection->getProtectionsNps($npsname, 2);
+                    $types = $this->protection->getTypesWithoutParent();
+                }
+                elseif($_POST['filter-type'] == "agregat"){
+                    $message = 'Список защит пуст';
+                    $protection = $this->protection->getProtectionsNps($npsname, 1);
+                    $types = $this->protection->getTypesWithoutParent();
+                }
+            }
+            else {
                 $message = 'Список защит пуст';
-                $protection = $this->protection->getProtectionsNps($npsname);
+                $protection = $this->protection->getProtectionsNps($npsname, 0);
                 $types = $this->protection->getTypesWithoutParent();
             }
 

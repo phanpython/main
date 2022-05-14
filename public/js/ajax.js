@@ -385,4 +385,24 @@ function showMessage(message, classElem) {
 function clearMessage(classElem) {
     document.querySelector('.' + classElem).innerHTML = '';
 }
+
+
+if(document.querySelector('.filter-content-mask__select')) {
+    let selectFilter = document.querySelector('.filter-content-mask__select');
+    let formFilter = document.querySelector('.type-select');
+    selectFilter.addEventListener('change', function (e) {
+        //console.log(selectFilter.value);
+        formFilter.submit();
+    });
+}
+
+function setSelect(selectValue) {
+    let xmlhttp = new XMLHttpRequest();
+    let params = 'select_value=' + encodeURIComponent(selectValue);
+    console.log(params);
+    xmlhttp.open("GET", "?" + params, true);
+    xmlhttp.send();
+}
+
 //Работа с ajax END;
+

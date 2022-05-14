@@ -119,13 +119,14 @@
                     <div class="permission-add__item">
 
                         <div class="permission-add__subtitle">
-                            4. Защиты:
+                            4. Маскирование защиты:
                         </div>
                         <div class="table-content-mask__rows table-content-mask__row_head">
                             <div class="table-content-mask__col table-content-mask__head" name="system">Система</div>
                             <div class="table-content-mask__col table-content-mask__head" name="protection">Защита</div>
                             <div class="table-content-mask__col table-content-mask__head" name="entrance">Вход</div>
                             <div class="table-content-mask__col table-content-mask__head" name="exit">Выход</div>
+                            <div class="table-content-mask__col table-content-mask__head entrance-on" name="type_location">Тип объекта</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="location">Объект</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="vtor">Втор</div>
                             <div class="table-content-mask__col table-content-mask__head entrance-on" name="delete-mask">Удалить</div>  
@@ -155,8 +156,11 @@
                                         <span class="check-entrance__span"></span>
                                     </label>
                                 </div>
+                                <div class="table-content-mask__col table-col entrance-on" >
+                                    <input type="text" name="type_location-{{i}}" class="table-col__input type_location input-row" value="{{protection.type_object_name}}">
+                                </div>
                                 <div class="table-content-mask__col table-col col-first entrance-on" >
-                                    <input type="text" name="location-{{i}}" readonly class="table-col__input location input-row" value="{{protection.object_name}}">
+                                    <input type="text" name="location-{{i}}" class="table-col__input location input-row" value="{{protection.object_name}}">
                                 </div>
                                 {% elseif protection.entrance_name == 'Выход' %}
                                 <div class="table-content-mask__col table-col">
@@ -170,6 +174,9 @@
                                         <input type="radio" class="check-entrance__input exit-{{i}} input-row" name="entrance_exit-{{i}}" value="exit-{{i}}" checked hidden>
                                         <span class="check-entrance__span"></span>
                                     </label>
+                                </div>
+                                <div class="table-content-mask__col table-col entrance-on" >
+                                    <input type="text" name="type_location-{{i}}" readonly class="table-col__input type_location input-row" value="{{protection.type_object_name}}">
                                 </div>
                                 <div class="table-content-mask__col table-col col-first entrance-on" >
                                     <input type="text" name="location-{{i}}" readonly class="table-col__input location input-row" value="{{protection.object_name}}">

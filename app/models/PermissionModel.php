@@ -39,10 +39,16 @@ class PermissionModel
 
         if (isset($_POST["del-masks"])){
             for($i = 1; $i < 1000; $i++) {
-                if (isset($_POST["protection_id-$i"])){
-                    $this->permission->delMasksByPermissionId($_POST['protection_id-' . $i], $_SESSION['idCurrentPermission']);
+                if ((isset($_POST["protection_id-$i"])) and ($_POST["entrance_exit-$i"] == "exit-$i")){
+                    $this->permission->delMasksByPermissionId($_POST['protection_id-' . $i], 0, '', '','',  $_SESSION['idCurrentPermission']);
                 }
-            }
+                elseif ((isset($_POST["protection_id-$i"])) and ($_POST["entrance_exit-$i"] == "entrance-$i") and (isset($_POST["vtor-$i"]))){
+                    $this->permission->delMasksByPermissionId($_POST['protection_id-' . $i], 1, $_POST['type_location-' . $i],  $_POST['location-' . $i], $_POST['vtor-' . $i] ,  $_SESSION['idCurrentPermission']);
+                }
+                elseif ((isset($_POST["protection_id-$i"])) and ($_POST["entrance_exit-$i"] == "entrance-$i"))  {
+                    $this->permission->delMasksByPermissionId($_POST['protection_id-' . $i], 1, $_POST['type_location-1'],  $_POST['location-' . $i], '', $_SESSION['idCurrentPermission']);
+                }
+                }
         }
     }
 
@@ -89,5 +95,6 @@ class PermissionModel
                 'protections' => $this->permission->getProtectionsOfPermission($_SESSION['idCurrentPermission']),
                 'untypical_work' => $this->permission->getUntypicalWorkOfPermission($_SESSION['idCurrentPermission'])];
         }
+        echo print_r($this->permission->getProtectionsOfPermission($_SESSION['idCurrentPermission']));
     }
 }

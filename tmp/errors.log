@@ -3925,3 +3925,384 @@ HINT:  Функция с данными именем и типами аргум�
 LINE 1: SELECT * FROM get_types
                       ^; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 164 
  ===================== 
+[2022-05-08 11:06:32] Сообщение: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "type_objectid" отношения "object" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (58, faf, null).
+CONTEXT:  SQL-функция "set_masking_protections_entrance_vtor", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 28 
+ ===================== 
+[2022-05-08 11:20:27] Сообщение: SQLSTATE[23503]: Foreign key violation: 7 ОШИБКА:  INSERT или UPDATE в таблице "masking_protection" нарушает ограничение внешнего ключа "fk_masking_protection_object"
+DETAIL:  Ключ (objectid)=(1) отсутствует в таблице "object".
+CONTEXT:  SQL-функция "set_masking_protections_exit", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 36 
+ ===================== 
+[2022-05-08 11:40:23] Сообщение: SQLSTATE[42703]: Undefined column: 7 ОШИБКА:  столбец work_protection.objectid не существует
+LINE 4:   work_protection.objectid
+          ^
+QUERY:  SELECT work_protection.protectionid,
+		work_protection.vtorid,
+		work_protection.entranceid,
+		work_protection.objectid
+		FROM work_protection
+		 JOIN typical_work ON typical_work.id = work_protection.workid
+			WHERE typical_work.name = var_work::bpchar
+CONTEXT:  функция PL/pgSQL get_masking_protections_from_typical_works(character varying,integer), строка 3, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 105 
+ ===================== 
+[2022-05-08 11:53:01] Сообщение: Undefined array key "object_id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-05-08 11:54:37] Сообщение: Undefined array key "object_id"; Файл: C:\OpenServer\domains\trans\app\models\TypeWorkModel.php; Линия: 34 
+ ===================== 
+[2022-05-08 12:29:17] Сообщение: SQLSTATE[21000]: Cardinality violation: 7 ОШИБКА:  подзапрос в выражении вернул больше одной строки
+CONTEXT:  SQL-оператор: "insert into masking_protection(permissionid, vtorid, entranceid, protectionid, objectid) VALUES 
+	 (var_permission_id, var_vtor_id, var_entrance_id,var_protection_id,(SELECT id FROM object WHERE object.type_objectid = var_type_object_id))"
+функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer,integer,integer,integer), строка 4, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 97 
+ ===================== 
+[2022-05-08 17:55:13] Сообщение: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "type_objectid" отношения "object" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (5, awf, null).
+CONTEXT:  SQL-функция "set_masking_protections_entrance_vtor", оператор 1; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 28 
+ ===================== 
+[2022-05-08 18:32:48] Сообщение: Undefined array key "idCurrentPermission"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 21 
+ ===================== 
+[2022-05-08 18:33:46] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections_exit(unknown, unknown, unknown, unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections_exit($1, $2, $3, $4, $...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:34:21] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция set_masking_protections(unknown, unknown, unknown, unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM set_masking_protections($1, $2, $3, $4, $5 ,  ...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:35:17] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  оператор не существует: character varying == integer
+LINE 1: var_type_location == 0
+                          ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+QUERY:  var_type_location == 0
+CONTEXT:  функция PL/pgSQL set_masking_protections(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:36:07] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  оператор не существует: character varying === integer
+LINE 1: var_type_location === 0
+                          ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+QUERY:  var_type_location === 0
+CONTEXT:  функция PL/pgSQL set_masking_protections(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:37:01] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  оператор не существует: character varying = integer
+LINE 1: var_type_location = 0
+                          ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+QUERY:  var_type_location = 0
+CONTEXT:  функция PL/pgSQL set_masking_protections(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:40:22] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: "МНА"
+CONTEXT:  функция PL/pgSQL set_masking_protections(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 18:41:30] Сообщение: SQLSTATE[22P02]: Invalid text representation: 7 ОШИБКА:  неверный синтаксис для типа integer: "МНА"
+CONTEXT:  функция PL/pgSQL set_masking_protections(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 19 
+ ===================== 
+[2022-05-08 19:54:51] Сообщение: SQLSTATE[42703]: Undefined column: 7 ОШИБКА:  столбец "masking_protection" не существует
+LINE 1: NOT EXISTS (SELECT masking_protection WHERE masking_protecti...
+                           ^
+QUERY:  NOT EXISTS (SELECT masking_protection WHERE masking_protection.protectionid = var_protection_id and masking_protection.permissionid = var_permission_id and 
+			  masking_protection.entranceid = var_entrance_id and  masking_protection.vtorid = var_vtor_id)
+CONTEXT:  функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer,integer,integer,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 80 
+ ===================== 
+[2022-05-08 19:55:49] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  таблица "masking_protection" отсутствует в предложении FROM
+LINE 1: NOT EXISTS (SELECT masking_protection.protectionid WHERE mas...
+                           ^
+QUERY:  NOT EXISTS (SELECT masking_protection.protectionid WHERE masking_protection.protectionid = var_protection_id and masking_protection.permissionid = var_permission_id and 
+			  masking_protection.entranceid = var_entrance_id and  masking_protection.vtorid = var_vtor_id)
+CONTEXT:  функция PL/pgSQL set_masking_protections_from_typical_works(integer,integer,integer,integer,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 80 
+ ===================== 
+[2022-05-08 22:09:52] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция del_masks_by_permission_id(unknown, unknown, unknown, unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM del_masks_by_permission_id($1, $2, $3, $4, $5 ...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-08 22:11:50] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция del_masks_by_permission_id(unknown, unknown, unknown, unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM del_masks_by_permission_id($1, $2, $3, $4, $5 ...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-08 22:12:27] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  функция del_masks_by_permission_id(unknown, unknown, unknown, unknown, unknown, unknown) не существует
+LINE 1: SELECT * FROM del_masks_by_permission_id($1, $2, $3, $4, $5 ...
+                      ^
+HINT:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-08 22:15:11] Сообщение: Undefined array key "protection_id-2"; Файл: C:\OpenServer\domains\trans\app\models\PermissionModel.php; Линия: 49 
+ ===================== 
+[2022-05-08 22:16:14] Сообщение: Undefined array key "type_location-1"; Файл: C:\OpenServer\domains\trans\app\models\PermissionModel.php; Линия: 46 
+ ===================== 
+[2022-05-08 22:31:29] Сообщение: SQLSTATE[42883]: Undefined function: 7 ОШИБКА:  оператор не существует: character varying = integer
+LINE 1: var_entrance_exit = 1
+                          ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+QUERY:  var_entrance_exit = 1
+CONTEXT:  функция PL/pgSQL del_masks_by_permission_id(integer,character varying,character varying,character varying,character varying,integer), строка 3, оператор IF; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-08 22:32:33] Сообщение: SQLSTATE[42703]: Undefined column: 7 ОШИБКА:  столбец masking_protection.entrenceid не существует
+LINE 2:     masking_protection.entrenceid = 1
+            ^
+HINT:  Возможно, предполагалась ссылка на столбец "masking_protection.entranceid".
+QUERY:  delete from masking_protection where masking_protection.permissionid = var_permission_id and masking_protection.protectionid = var_protection_id and 
+				masking_protection.entrenceid = 1
+CONTEXT:  функция PL/pgSQL del_masks_by_permission_id(integer,character varying,character varying,character varying,character varying,integer), строка 4, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-08 22:36:32] Сообщение: SQLSTATE[42P01]: Undefined table: 7 ОШИБКА:  отношение "masking" не существует
+LINE 1: ...asking_protection where ctid in (SELECT ctid from masking pr...
+                                                             ^
+QUERY:  delete from masking_protection where ctid in (SELECT ctid from masking protection WHERE  masking_protection.permissionid = var_permission_id and masking_protection.protectionid = var_protection_id and 
+				masking_protection.entranceid = 2)
+CONTEXT:  функция PL/pgSQL del_masks_by_permission_id(integer,character varying,character varying,character varying,character varying,integer), строка 7, оператор SQL-оператор; Файл: C:\OpenServer\domains\trans\app\widgets\permission\Permission.php; Линия: 187 
+ ===================== 
+[2022-05-09 15:38:47] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:49:11] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:53:07] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:54:02] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:54:36] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:54:53] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 83 
+ ===================== 
+[2022-05-09 15:58:41] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 82 
+ ===================== 
+[2022-05-09 16:09:25] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 85 
+ ===================== 
+[2022-05-09 16:09:31] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 85 
+ ===================== 
+[2022-05-09 16:10:32] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 85 
+ ===================== 
+[2022-05-09 16:13:02] Сообщение: Undefined array key "filter-type"; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 75 
+ ===================== 
+[2022-05-09 17:19:50] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 85 
+ ===================== 
+[2022-05-09 23:26:12] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:26:13] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:26:13] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:27:14] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 96 
+ ===================== 
+[2022-05-09 23:27:15] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 96 
+ ===================== 
+[2022-05-09 23:27:50] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:27:51] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:27:57] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:27:59] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:28:01] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:28:44] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:28:44] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:28:45] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:28:51] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:35:50] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:35:51] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:36:40] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-09 23:41:29] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-09 23:41:30] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 00:02:13] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 00:02:14] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 00:03:32] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:03:33] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:03:34] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:03:35] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:04:18] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:04:19] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:04:52] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:04:52] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:05:44] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:05:49] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:06:27] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:06:48] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:06:49] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:10:25] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:10:54] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:10:56] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:11:11] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:11:25] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:12:50] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:13:02] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:13:05] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:13:47] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:13:59] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:14:08] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 00:14:09] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:35:41] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:49:25] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:49:26] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:49:36] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:49:50] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 09:51:15] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:00:03] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:00:04] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:00:52] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:01:02] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:01:49] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:01:59] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-10 10:02:50] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:02:51] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:03:36] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:03:37] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:03:38] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:03:39] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:04:13] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:04:14] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:09:07] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 10:09:09] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 12:20:06] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 12:20:08] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 12:52:29] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 12:52:50] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:00:01] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:00:05] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:00:25] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:00:31] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:00:38] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:04:15] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:04:18] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:04:19] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:04:40] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:04:53] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:05:29] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:21:56] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:24:47] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-10 20:25:18] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-11 01:11:06] Сообщение: Страница не найдена; Файл: C:\OpenServer\domains\trans\vendor\core\Router.php; Линия: 40 
+ ===================== 
+[2022-05-14 09:44:11] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 95 
+ ===================== 
+[2022-05-14 09:49:04] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 91 
+ ===================== 
+[2022-05-14 09:49:06] Сообщение: models\MaskAddModel::getAddnpsVarsToTwig(): Return value must be of type array, none returned; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 91 
+ ===================== 
+[2022-05-14 09:59:11] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 82 
+ ===================== 
+[2022-05-14 10:40:50] Сообщение: Undefined variable $message; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 87 
+ ===================== 
+[2022-05-14 10:41:57] Сообщение: Undefined variable $message; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 87 
+ ===================== 
+[2022-05-14 10:42:10] Сообщение: Undefined variable $message; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 87 
+ ===================== 
+[2022-05-14 10:42:45] Сообщение: Undefined variable $protection; Файл: C:\OpenServer\domains\trans\app\models\MaskAddModel.php; Линия: 92 
+ ===================== 
+[2022-05-14 11:46:46] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (2) не соответствует ожидаемому числу (3).
+CONTEXT:  SQL-оператор: "SELECT protection.id,
+    protection.name AS protection_name
+   FROM protection
+     JOIN area ON area.id = protection.areaid
+  		WHERE area.name::text = var_npsname::text and
+		protection.typeid = var_typeid"
+функция PL/pgSQL get_protections_nps(character varying,integer), строка 10, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 45 
+ ===================== 
+[2022-05-14 11:50:03] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (2) не соответствует ожидаемому числу (3).
+CONTEXT:  SQL-оператор: "SELECT protection.id,
+    protection.name AS protection_name
+   FROM protection
+     JOIN area ON area.id = protection.areaid
+  		WHERE area.name::text = var_npsname::text and
+		protection.typeid = var_typeid"
+функция PL/pgSQL get_protections_nps(character varying,integer), строка 11, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 45 
+ ===================== 
+[2022-05-14 11:51:37] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Возвращаемый тип integer не соответствует ожидаемому типу character varying в столбце 1.
+CONTEXT:  SQL-оператор: "SELECT protection.id,
+    protection.name AS protection_name
+   FROM protection
+     JOIN area ON area.id = protection.areaid
+  		WHERE area.name::text = var_npsname::text and
+		protection.typeid = var_typeid"
+функция PL/pgSQL get_protections_nps(character varying,integer), строка 11, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 45 
+ ===================== 
+[2022-05-14 11:51:58] Сообщение: SQLSTATE[42804]: Datatype mismatch: 7 ОШИБКА:  structure of query does not match function result type
+DETAIL:  Число возвращённых столбцов (2) не соответствует ожидаемому числу (3).
+CONTEXT:  SQL-оператор: "SELECT protection.id,
+    protection.name AS protection_name
+   FROM protection
+     JOIN area ON area.id = protection.areaid
+  		WHERE area.name::text = var_npsname::text and
+		protection.typeid = var_typeid"
+функция PL/pgSQL get_protections_nps(character varying,integer), строка 11, оператор RETURN QUERY; Файл: C:\OpenServer\domains\trans\app\widgets\protection\Protection.php; Линия: 45 
+ ===================== 
